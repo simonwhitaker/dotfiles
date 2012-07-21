@@ -1,0 +1,27 @@
+{
+	"color_scheme": "Packages/User/Monokai Bright.tmTheme",
+	"draw_indent_guides": false,
+	"font_size": 12.0,
+	"highlight_modified_tabs": true,
+	"match_selection": false,
+
+    // Valid options are "no_bold", "no_italic", "no_antialias", "gray_antialias",
+    // "subpixel_antialias", "no_round" (OS X only) and "directwrite" (Windows only)
+    "font_options": [ "no_italic" ],
+
+    // Exiting the application with hot_exit enabled will cause it to close
+    // immediately without prompting. Unsaved modifications and open files will
+    // be preserved and restored when next starting.
+    //
+    // Closing a window with an associated project will also close the window
+    // without prompting, preserving unsaved changes in the workspace file
+    // alongside the project.
+    "hot_exit": false,
+
+    // remember_open_files makes the application start up with the last set of
+    // open files. Changing this to false will have no effect if hot_exit is
+    // true
+    "remember_open_files": false,
+
+    "translate_tabs_to_spaces": true
+}
