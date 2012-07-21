@@ -1,0 +1,20 @@
+#!/bin/bash
+
+script_name=$(basename $0)
+
+usage()
+{
+    cat << EOF >&2
+usage: ${script_name} <since>
+EOF
+}
+
+# Check we have at least one arg (the "since" revision)
+if [ $# == 0 ]; then
+    usage
+    exit 1
+fi
+
+since="$1"
+
+git log --oneline --reverse "${since}".. | cut -d ' ' -f 2- | grep -v "Merge branch"

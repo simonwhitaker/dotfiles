@@ -1,85 +1,74 @@
-set noswapfile
+syn on
 
-" ----------------------------------------------------------------------------
-"  Text Formatting
-" ----------------------------------------------------------------------------
+set nocp                    " turn off Vi compatibility mode
+set esckeys
+set ruler                   " turn on ruler
+set backspace=indent,eol,start
+set wildmenu                " turn on wild menu (:help wildmenu)
+"set number                  " turn on line numbering
+set noerrorbells            " don't make noise
+set backup
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/temp " directory for temp files
 
-set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
-inoremap # X<BS>#
-set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
-set shiftwidth=2           " ..
-set tabstop=4
-set expandtab              " expand tabs to spaces
-set nosmarttab             " fuck tabs
-set formatoptions+=n       " support for numbered/bullet lists
-"set textwidth=80           " wrap at 80 chars by default
-set virtualedit=block      " allow virtual edit in visual block ..
+set diffopt=iwhite          " ignore whitespace diffs
 
-" ----------------------------------------------------------------------------
-"  Remapping
-" ----------------------------------------------------------------------------
+filetype on                 " Make VIM filetype-savvy
 
-" lead with ,
-let mapleader = ","
+set showmatch              " show matching brackets
+set mat=5                  " how many tenths of a second to blink matching brackets for
+"set nohlsearch              " do not highlight searched for phrases
+set hlsearch
+set incsearch               " BUT do highlight as you type you search phrase
 
-" exit to normal mode with 'jj'
-inoremap jj <ESC>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text Formatting/Layout
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set ai                      " autoindent
+"set si                     " smartindent 
+"set cindent                " do c-style indenting
+set tabstop=4               " tab spacing (settings below are just to unify it)
+set softtabstop=4           " unify
+set shiftwidth=4            " unify 
+set expandtab               " convert tabs to spaces
+"set noexpandtab            " real tabs please!
+"set nowrap                 " do not wrap lines  
+set smarttab                " use tabs at the start of a line, spaces elsewhere
+set formatoptions=tcrql   " set the options for comment formatting
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Perl
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let perl_extended_vars=1    " highlight advanced perl vars inside strings
+autocmd BufRead    *.t   set syntax=perl " syntax highlighting for .t files
+" autocmd BufNewFile *.pl  0r ~/.vim/skeleton.pl
 
-" reflow paragraph with Q in normal and visual mode
-nnoremap Q gqap
-vnoremap Q gq
-
-" sane movement with wrap turned on
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
-
-" ----------------------------------------------------------------------------
-"  UI
-" ----------------------------------------------------------------------------
-
-set ruler                  " show the cursor position all the time
-set noshowcmd              " don't display incomplete commands
-set nolazyredraw           " turn off lazy redraw
-set number                 " line numbers
-set wildmenu               " turn on wild menu
-set wildmode=list:longest,full
-set ch=2                   " command line height
-set backspace=2            " allow backspacing over everything in insert mode
-set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
-set shortmess=filtIoOA     " shorten messages
-set report=0               " tell us about changes
-set nostartofline          " don't jump to the start of line when scrolling
+if version >= 700 
+   function! AddRtipBoilerplate()
+       set ft=perl
+       r ~/.vim/skeleton.rtip
+   endfunction
+   command! -nargs=0 Rtip :call AddRtipBoilerplate()
+   map <F9> :Rtip<cr>ggdd/''<cr>
+   set mouse=a                 " use mouse in normal mode
+endif
 
 
-" ----------------------------------------------------------------------------
-" Visual Cues
-" ----------------------------------------------------------------------------
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Makefile
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType make set noexpandtab " make files must contain actual tabs, not spaces, at start of command lines
 
-set showmatch              " brackets/braces that is
-set mat=5                  " duration to show matching brace (1/10 sec)
-set incsearch              " do incremental searching
-set laststatus=2           " always show the status line
-set ignorecase             " ignore case when searching
-set nohlsearch             " don't highlight searches
-set visualbell             " shut the fuck up
+map <xF3> *	            " numeric keypad * key
+nnoremap <silent> <F8> :TlistToggle<CR>  " F8 toggles Tag list on and off
+" let Tlist_Auto_Open = 1     " Open Tag list automatically when opening a file
 
+" If using ViM 7.x, map F5, F6 to navigate through tabs
+map <F5> :tabp<cr>
+map <F6> :tabn<cr>
 
-" ---------------------------------------------------------------------------
-"  Strip all trailing whitespace in file
-" ---------------------------------------------------------------------------
-
-function! StripWhitespace ()
-    exec ':%s/ \+$//gc'
-endfunction
-map ,s :call StripWhitespace ()<CR>
+" Open file at the line we last edited
+if has("autocmd")
+ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+   \| exe "normal! g'\"" | endif
+endif
