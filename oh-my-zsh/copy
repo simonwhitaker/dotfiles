@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -rvL $DOTFILES/oh-my-zsh/custom/* ~/.oh-my-zsh/custom
