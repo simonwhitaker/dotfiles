@@ -71,6 +71,17 @@ then
     source $vew_bootstrap
 fi
 
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# Now bootstrap oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# Fix up/down arrow behaviour to preferred weirdness
 # Up/down arrows search back/forwards in the history for 
 # a line beginning with the current line up to the cursor.
 # This leaves the cursor in its original position.
@@ -84,14 +95,4 @@ bindkey '^[[B' history-beginning-search-forward-end
 
 # META-. inserts last word from previous history item
 bindkey "^[." insert-last-word
-
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
-# Finally, bootstrap oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
