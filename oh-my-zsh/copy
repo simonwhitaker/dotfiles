@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rsync -rvL $DOTFILES/oh-my-zsh/custom/* ~/.oh-my-zsh/custom
+rsync --recursive --verbose --copy-links $DOTFILES/oh-my-zsh/custom/* ~/.oh-my-zsh/custom
