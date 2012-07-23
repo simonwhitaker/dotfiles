@@ -65,7 +65,7 @@ alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 # Open Sublime Text 2 instead of TextMate
 alias mate=subl
 
-export PATH=~/Library/Executables:$PATH
+export PATH=$DOTFILES/bin:$PATH
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
