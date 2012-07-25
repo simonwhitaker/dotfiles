@@ -1,3 +1,7 @@
+#--------------------------------------------------------
+# Initial config prior to running oh-my-zsh
+#--------------------------------------------------------
+
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
@@ -36,9 +40,6 @@ DISABLE_AUTO_TITLE="true"
 # plugins=(brew django gibo git git-flow osx python)
 plugins=(brew django gibo git git-flow osx python sublime)
 
-# Turn off autocorrect
-unsetopt correct_all
-
 # Enable zmv for pattern-based renaming. Run zmv without args for docs
 autoload -U zmv
 # alias for zmv for no quotes
@@ -56,10 +57,6 @@ then
     alias pljson="plutil -convert json -r -o -"
     alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-
-    # Open Sublime Text 2 instead of TextMate
-    alias mate=subl
-
     export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 fi
 
@@ -78,8 +75,16 @@ then
   source ~/.localrc
 fi
 
+
+#--------------------------------------------------------
 # Now bootstrap oh-my-zsh
+#--------------------------------------------------------
+
 source $ZSH/oh-my-zsh.sh
+
+#--------------------------------------------------------
+# Tweak oh-my-zsh default behaviour
+#--------------------------------------------------------
 
 # Fix up/down arrow behaviour to preferred weirdness
 # Up/down arrows search back/forwards in the history for 
@@ -95,4 +100,7 @@ bindkey '^[[B' history-beginning-search-forward-end
 
 # META-. inserts last word from previous history item
 bindkey "^[." insert-last-word
+
+# Turn off autocorrect
+unsetopt correct_all
 
