@@ -52,6 +52,8 @@ alias gll="git log --graph --pretty=format:\"%C(yellow)%h%Creset %C(cyan)%d%Cres
 if [[ -a /Applications ]]
 then
     # Mac OS X-specific stuff
+    chflags nohidden ~/Library/
+
     alias zshrc="subl ~/.zshrc"
     alias ohmyzsh="subl ~/.oh-my-zsh"
     alias pljson="plutil -convert json -r -o -"
