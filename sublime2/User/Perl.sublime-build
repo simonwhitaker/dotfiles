@@ -1,0 +1,4 @@
+{
+    "cmd": ["perl", "$file"],
+    "selector": "source.perl"
+}
