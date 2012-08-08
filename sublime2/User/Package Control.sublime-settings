@@ -1,7 +1,8 @@
 {
-	"auto_upgrade_last_run": 1342843755,
+	"auto_upgrade_last_run": 1344411021,
 	"installed_packages":
 	[
+		"Djaneiro",
 		"Package Control",
 		"Pretty JSON"
 	]
