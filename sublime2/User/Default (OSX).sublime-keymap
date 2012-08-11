@@ -1,2 +1,20 @@
 [
+    /* 
+    CMD+SHIFT+RETURN in source.python scope adds a trailing colon
+    then a newline, like TextMate used to do
+    */
+    { 
+        "keys": ["super+shift+enter"], 
+        "command": "run_macro_file", 
+        "args": {
+            "file": "Packages/User/Add Terminating Colon then New Line.sublime-macro"
+        },
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    }
 ]
