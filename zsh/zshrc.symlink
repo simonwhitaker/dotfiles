@@ -38,7 +38,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(brew django gibo git git-flow osx python)
-plugins=(brew django gibo git git-flow heroku osx python sublime)
+plugins=(brew django gibo git git-flow heroku osx python rvm sublime)
 
 # Enable zmv for pattern-based renaming. Run zmv without args for docs
 autoload -U zmv

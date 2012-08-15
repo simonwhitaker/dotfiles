@@ -23,5 +23,10 @@
     // true
     "remember_open_files": false,
 
+    // Disables horizontal scrolling if enabled.
+    // May be set to true, false, or "auto", where it will be disabled for
+    // source code, and otherwise enabled.
+    "word_wrap": "true",
+
     "translate_tabs_to_spaces": true
 }
