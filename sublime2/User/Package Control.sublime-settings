@@ -1,8 +1,10 @@
 {
-	"auto_upgrade_last_run": 1345758280,
+	"auto_upgrade_last_run": 1346622851,
 	"installed_packages":
 	[
+		"ApacheConf.tmLanguage",
 		"Djaneiro",
+		"Marked.app Menu",
 		"Package Control",
 		"Pretty JSON"
 	]
