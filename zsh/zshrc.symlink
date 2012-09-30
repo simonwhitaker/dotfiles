@@ -6,6 +6,9 @@
 export DOTFILES=$HOME/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
 
+# Add MySQL bin dir to path
+export PATH=$PATH:/usr/local/mysql/bin
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
