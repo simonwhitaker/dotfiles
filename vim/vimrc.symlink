@@ -8,8 +8,8 @@ set wildmenu                " turn on wild menu (:help wildmenu)
 "set number                  " turn on line numbering
 set noerrorbells            " don't make noise
 set backup
-"set backupdir=$HOME/.vim/backup
-"set directory=$HOME/.vim/temp " directory for temp files
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/temp " directory for temp files
 
 set diffopt=iwhite          " ignore whitespace diffs
 
