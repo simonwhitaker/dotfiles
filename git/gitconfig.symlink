@@ -3,8 +3,6 @@
         email = simon@goosoftware.co.uk
 [alias]
         release-notes = !$DOTFILES/bin/git-release-notes
-[difftool "Kaleidoscope"]
-        cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [difftool]
         prompt = false
 [diff]
