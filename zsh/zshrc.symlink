@@ -51,6 +51,7 @@ alias mmv='noglob zmv -W'
 
 # Add some useful aliases
 alias gll="git log --graph --pretty=format:\"%C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%cr)%Creset\""
+alias gla="gll --all"
 
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
