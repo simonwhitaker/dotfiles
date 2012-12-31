@@ -1,12 +1,12 @@
 [user]
-        name = Simon Whitaker
-        email = simon@goosoftware.co.uk
+	name = Simon Whitaker
+	email = simon@goosoftware.co.uk
 [alias]
         release-notes = !$DOTFILES/bin/git-release-notes
 [difftool]
-        prompt = false
+	prompt = false
 [diff]
-        tool = vimdiff
+	tool = Kaleidoscope
 [color]
         diff = auto
         status = auto
@@ -14,6 +14,7 @@
         ui = true
 [mergetool]
         keepBackup = true
+	prompt = false
 [core]
         quotepath = false
 	excludesfile = /Users/simon/.gitignore
@@ -25,3 +26,9 @@
 	trustExitCode = true
 [github]
 	user = simonwhitaker
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[merge]
+	tool = Kaleidoscope
