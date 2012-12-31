@@ -1,0 +1,2 @@
+command regex rd 's/^[[:space:]]*$/po [[UIApp keyWindow] recursiveDescription]/' 's/^(.+)$/po [%1 recursiveDescription]/'
+
