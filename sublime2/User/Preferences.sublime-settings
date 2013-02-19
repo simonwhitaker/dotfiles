@@ -1,11 +1,11 @@
 {
 	"color_scheme": "Packages/User/Monokai Bright.tmTheme",
 	"draw_indent_guides": false,
+	"font_face": "Menlo",
 	"font_options":
 	[
-		"no_italic"
 	],
-	"font_size": 11.0,
+	"font_size": 11,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"match_selection": false,
