@@ -11,6 +11,8 @@ set backup
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/temp " directory for temp files
 
+set backupskip=/tmp/*,/private/tmp/* " Don't back up temp files
+
 set diffopt=iwhite          " ignore whitespace diffs
 
 filetype on                 " Make VIM filetype-savvy
