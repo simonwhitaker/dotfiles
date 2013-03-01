@@ -8,6 +8,10 @@
 	"font_size": 11,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"match_selection": false,
 	"remember_open_files": false,
 	"translate_tabs_to_spaces": true,
