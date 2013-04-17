@@ -5,6 +5,7 @@
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
 
 # Add MySQL bin dir to path
 export PATH=$PATH:/usr/local/mysql/bin
@@ -76,6 +77,8 @@ then
     alias pljson="plutil -convert json -r -o -"
     alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+    alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
     export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
     export AWS_RDS_HOME="$HOME/Library/Developer/RDSCli"
