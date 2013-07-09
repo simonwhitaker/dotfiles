@@ -4,3 +4,9 @@
 *.swp
 *.rbc
 *.pyc
+xcuserdata
+.ruby-gemset
+.ruby-version
+.dropbox
+# Icon followed by two ^M control characters - see http://blog.bitfluent.com/post/173740409/ignoring-icon-in-gitignore?7ea74050
+Icon

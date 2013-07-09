@@ -45,7 +45,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(brew django gibo git git-flow osx python)
-plugins=(brew django gibo git heroku osx python sublime)
+plugins=(brew django gibo git heroku mercurial osx python sublime)
 
 # Enable zmv for pattern-based renaming. Run zmv without args for docs
 autoload -U zmv
@@ -67,6 +67,11 @@ then
     export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 fi
 
+if [[ -a /usr/local/bin/xctool ]]
+then
+    alias xcodebuild="xctool"
+fi
+
 if [[ -a /Applications ]]
 then
     # OS X-specific stuff
@@ -78,6 +83,11 @@ then
     alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
     alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+    kill-adobe-updater() {
+        killall "AAM Updates Notifier" 2>/dev/null || echo "AAM Updater not running"
+        rm ~/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist 2>/dev/null || echo "LaunchAgent not found"
+    }
 
     export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 

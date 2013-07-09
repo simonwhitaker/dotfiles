@@ -1,0 +1,28 @@
+{
+    "name": "PostScript",
+    "scopeName": "source.ps",
+    "fileTypes": ["ps"],
+    "patterns": [
+        {
+            "match": "\\b(abs|add|aload|anchorsearch|and|arc|arcn|arct|arcto|array|ASCII85Decode|ASCII85Encode|ASCIIHexDecode|ASCIIHexEncode|ashow|astore|atan ﬂattenpath|awidthshow|banddevice|begin|bind|bitshift|bytesavailable|cachestatus|CCITTFaxDecode|CCITTFaxEncode|ceiling|charpath|CIEBasedA|CIEBasedABC|CIEBasedDEF|CIEBasedDEFG|clear|cleardictstack|cleartomark|clip|clippath|closefile|closepath|colorimage|concat|concatmatrix|condition|copy|copypage|cos|count|countdictstack|countexecstack|counttomark|Courier|Courier-Bold|Courier-BoldOblique|Courier-Oblique|cshow|currentblackgeneration|currentcacheparams|currentcmykcolor|currentcolor|currentcolorrendering|currentcolorscreen|currentcolorspace|currentcolortransfer|currentcontext|currentdash|currentdevparams|currentdict|currentfile|currentfont|currentglobal|currentgray|currentgstate|currenthalftone|currenthalftonephase|currenthsbcolor|currentlinecap|currentlinejoin|currentlinewidth|currentmatrix|currentmiterlimit|currentobjectformat|currentoverprint|currentpacking|currentpagedevice|currentpoint|currentrgbcolor|currentscreen|currentshared|currentstrokeadjust|currentsystemparams|currenttransfer|currentundercolorremoval|currentuserparams|currentﬂat|curveto|cvi|cvlit|cvn|cvr|cvrs|cvs|cvx|DCTDecode|DCTEncode|def|defaultmatrix|definefont|defineresource|defineusername|defineuserobject|deletefile|detach|DeviceCMYK|DeviceGray|deviceinfo|DeviceN|DeviceRGB|dict|dictstack|div|dtransform|dup|echo|Encodings|end|eoclip|eofill|eoviewclip|eq|erasepage|errordict|exch|exec|execform|execstack|execuserobject|executeonly|exit|exp|false|file|filenameforall|fileposition|fill|filter|findencoding|findfont|findresource|FontDirectory|for|forall|fork|framedevice|gcheck|ge|get|getinterval|globaldict|GlobalFontDirectory|glyphshow|grestore|grestoreall|gsave|gstate|gt|handleerror|Helvetica|Helvetica-Bold|Helvetica-BoldOblique|Helvetica-Oblique|identmatrix|idiv|idtransform|if|ifelse|image|imagemask|index|Indexed|ineofill|infill|initclip|initgraphics|initmatrix|initviewclip|instroke|inueofill|inufill|inustroke|invertmatrix|ISOLatin1Encoding|itransform|join|known|kshow|languagelevel|le|length|lineto|ln|load|lock|log|loop|lt|LZWDecode|LZWEncode|makefont|makepattern|mark|matrix|maxlength|mod|monitor|moveto|mul|Name|ne|neg|newpath|noaccess|not|notify|null|nulldevice|NullEncode ﬂoor|or|packedarray|pathbbox|pathforall|Pattern|pop|print|printobject|product|pstack|put|putinterval|quit|rand|rcheck|rcurveto|read|readhexstring|readline|readonly|readstring|realtime|rectclip|rectfill|rectstroke|rectviewclip|renamefile|renderbands|repeat|resetfile|resourceforall|resourcestatus|restore|reversepath|revision|rlineto|rmoveto|roll|rootfont|rotate|round|rrand|run|RunLengthDecode|RunLengthEncode|save|scale|scalefont|scheck|search|selectfont|Separation|serialnumber|setbbox|setblackgeneration|setcachedevice|setcachedevice2|setcachelimit|setcacheparams|setcharwidth|setcmykcolor|setcolor|setcolorrendering|setcolorscreen|setcolorspace|setcolortransfer|setdash|setdevparams|setfileposition|setfont|setglobal|setgray|setgstate|sethalftone|sethalftonephase|sethsbcolor|setlinecap|setlinejoin|setlinewidth|setmatrix|setmiterlimit|setobjectformat|setoverprint|setpacking|setpagedevice|setpattern|setrgbcolor|setscreen|setshared|setstrokeadjust|setsystemparams|settransfer|setucacheparams|setundercolorremoval|setuserparams|setvmthreshold|setﬂat|shareddict|SharedFontDirectory|show|showpage|sin|sqrt|srand|stack|StandardEncoding|startjob|status|statusdict|stop|stopped|store|string|stringwidth|stroke|strokepath|sub|SubFileDecode|Symbol|System|systemdict|Times-Bold|Times-BoldItalic|Times-Italic|Times-Roman|token|transform|translate|true|truncate|type|uappend|ucache|ucachestatus|ueofill|ufill|undef|undefinefont|undefineresource|undefineuserobject|upath|userdict|UserObjects|usertime ﬂush ﬂushfile|ustroke|ustrokepath|version|viewclip|viewclippath|vmreclaim|vmstatus|wait|wcheck|where|widthshow|write|writehexstring|writeobject|writestring|wtranslation|xcheck|xor|xshow|xyshow|yield|yshow)\\b",
+            "name": "keyword.source.ps"
+        },
+        {
+            "match": "%.*$",
+            "name": "comment.source.ps"
+        },
+        {
+            "match": "\\([^)]*\\)",
+            "name": "string.source.ps"
+        },
+        {
+            "match": "\\b\\d+(\\.\\d+)?\\b",
+            "name": "constant.numeric.ps"
+        },
+        {
+            "match": "/\\w+",
+            "name": "variable.source.ps"
+        }
+    ],
+    "uuid": "f2aaef8e-e54a-4fa0-9e02-3a12a4032c89"
+}

@@ -2,12 +2,15 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"AAAPackageDev",
 		"ApacheConf.tmLanguage",
 		"Djaneiro",
 		"GitGutter",
+		"Indent XML",
 		"Marked.app Menu",
 		"Package Control",
 		"Pretty JSON",
-		"Rust"
+		"Rust",
+		"ShowEncoding"
 	]
 }

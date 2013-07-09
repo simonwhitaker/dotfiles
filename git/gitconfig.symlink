@@ -33,3 +33,5 @@
 	trustExitCode = true
 [merge]
 	tool = Kaleidoscope
+[push]
+	default = simple
