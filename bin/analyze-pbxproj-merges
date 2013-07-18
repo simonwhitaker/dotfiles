@@ -12,7 +12,7 @@ use_colors() {
     echo 1
 }
 
-_echo_with_color_code() {
+_print_with_color_code() {
     color_code=$1
     text="$2"
     if [ $(use_colors) = 1 ]; then
@@ -22,20 +22,20 @@ _echo_with_color_code() {
     fi
 }
 
-echo_green() {
-    _echo_with_color_code 32 "$1"
+print_green() {
+    _print_with_color_code 32 "$1"
 }
 
-echo_red() {
-    _echo_with_color_code 31 "$1"
+print_red() {
+    _print_with_color_code 31 "$1"
 }
 
-echo_amber() {
-    _echo_with_color_code 33 "$1"
+print_amber() {
+    _print_with_color_code 33 "$1"
 }
 
-echo_bold() {
-    _echo_with_color_code "0;1" "$1"
+print_bold() {
+    _print_with_color_code "0;1" "$1"
 }
 
 temp_branch_prefix=$(basename $0)
@@ -56,7 +56,7 @@ echo "*.pbxproj merge=union" >> ".git/info/attributes"
 # for now.
 for sha in $(git log --min-parents=2 --max-parents=2 --format=%h --grep "Conflicts:" --grep "project.pbxproj" --all-match); do
     subject=$(git log --max-count 1 --format=%s $sha)
-    echo_bold "Analyzing $sha ($subject)"
+    print_bold "Analyzing $sha ($subject)"
     
     # For now, we're only interested in commits where the .pbxproj file was
     # the only conflict. That means we expect to find 3 lines in the commit 
@@ -88,16 +88,16 @@ for sha in $(git log --min-parents=2 --max-parents=2 --format=%h --grep "Conflic
         # then show diff output only if there's anything to show
         git diff --quiet $sha
         if [ $? = 0 ]; then
-            echo_green "  No diffs when compared with original merge"
+            print_green "  No diffs when compared with original merge"
         else
             diff_stat=$(git diff --shortstat $sha)
-            echo_amber "  Diffs when compared with original merge: $diff_stat"
+            print_amber "  Diffs when compared with original merge: $diff_stat"
 
             # Show the diffs for user to inspect
             #git diff $sha
         fi
     else
-        echo_red "  Merge still failed, even with merge=union attribute set"
+        print_red "  Merge still failed, even with merge=union attribute set"
         git merge --abort > /dev/null 2>&1
     fi
 
