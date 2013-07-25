@@ -1,0 +1,20 @@
+#!/bin/sh
+
+count_file="$HOME/.apple-dev-sites-up-count"
+old_count=$(cat $count_file 2>/dev/null)
+if [ -z $old_count ]; then
+    old_count=0
+fi
+
+online_icon_count=$(curl -s https://developer.apple.com/support/system-status/ | grep -o online-icon | wc -l)
+new_count=$(echo "$online_icon_count - 1" | bc)
+
+current_time=$(date "+%H:%m")
+if [ $new_count -gt $old_count ]; then
+    echo "Was $old_count, now $new_count"
+    /usr/local/bin/growlnotify -s -a Safari -m "$current_time: Apple now have $new_count functioning developer services!"
+else
+    echo "No change"
+fi
+
+echo $new_count > "$count_file"
