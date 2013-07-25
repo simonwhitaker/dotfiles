@@ -1,20 +1,28 @@
 #!/bin/sh
 
+# Define a file where we'll store the previous number of healthy services
 count_file="$HOME/.apple-dev-sites-up-count"
+
+# Get the previous count of healthy services; default to zero
 old_count=$(cat $count_file 2>/dev/null)
 if [ -z $old_count ]; then
     old_count=0
 fi
 
-online_icon_count=$(curl -s https://developer.apple.com/support/system-status/ | grep -o online-icon | wc -l)
+# Get the new count of healthy services
+online_icon_count=$(curl -s https://developer.apple.com/support/system-status/ | grep -o "<div class=\"online-icon\">" | wc -l)
 new_count=$(echo "$online_icon_count - 1" | bc)
 
-current_time=$(date "+%H:%m")
+# If new services are up, tell me about it
 if [ $new_count -gt $old_count ]; then
     echo "Was $old_count, now $new_count"
-    /usr/local/bin/growlnotify -s -a Safari -m "$current_time: Apple now have $new_count functioning developer services!"
+
+    # Send a Growl notification so I don't miss the great news
+    current_time=$(date "+%H:%m")
+    /usr/local/bin/growlnotify --sticky --appIcon Safari --message "$current_time: Apple now have $new_count functioning developer services!"
 else
     echo "No change"
 fi
 
+# Store the current count, ready for next time
 echo $new_count > "$count_file"
