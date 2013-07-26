@@ -20,9 +20,10 @@ if [ $new_count -gt $old_count ]; then
     # Send a Growl notification so I don't miss the great news
     current_time=$(date "+%H:%m")
     /usr/local/bin/growlnotify --sticky --appIcon Safari --message "$current_time: Apple now have $new_count functioning developer services!"
+
+    # Store the current count, ready for next time
+    echo $new_count > "$count_file"
 else
     echo "No change"
 fi
 
-# Store the current count, ready for next time
-echo $new_count > "$count_file"
