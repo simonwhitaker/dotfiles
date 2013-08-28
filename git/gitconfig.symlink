@@ -1,23 +1,24 @@
 [user]
-	name = Simon Whitaker
-	email = simon@goosoftware.co.uk
+    name = Simon Whitaker
+    email = simon@goosoftware.co.uk
 [alias]
-        release-notes = !$DOTFILES/bin/git-release-notes
+    release-notes = !$DOTFILES/bin/git-release-notes
+    is-ancestor = !$DOTFILES/bin/git-is-ancestor
 [difftool]
-	prompt = false
+    prompt = false
 [diff]
-	tool = Kaleidoscope
+    tool = Kaleidoscope
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [mergetool]
-        keepBackup = true
-	prompt = false
+    keepBackup = true
+    prompt = false
 [core]
-        quotepath = false
-	excludesfile = /Users/simon/.gitignore
+    quotepath = false
+    excludesfile = /Users/simon/.gitignore
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -25,13 +26,13 @@
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
 [github]
-	user = simonwhitaker
+    user = simonwhitaker
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustExitCode = true
 [merge]
-	tool = Kaleidoscope
+    tool = Kaleidoscope
 [push]
-	default = simple
+    default = simple
