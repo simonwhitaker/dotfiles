@@ -17,4 +17,4 @@ fi
 
 since="$1"
 
-git log --oneline --reverse "${since}".. | cut -d ' ' -f 2- | grep -v "Merge branch" | grep -v "\[minor\]" | tee /dev/tty | pbcopy
+git log --format="- %s" --no-merges --reverse "${since}".. | grep -v "\[minor\]" | tee /dev/tty | pbcopy
