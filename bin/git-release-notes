@@ -11,10 +11,11 @@ EOF
 
 # Check we have at least one arg (the "since" revision)
 if [ $# == 0 ]; then
+    since=$(git describe --tags --abbrev=0 HEAD^1)
     usage
-    exit 1
+    echo Showing release notes since $since >&2
+else
+    since="$1"
 fi
-
-since="$1"
 
 git log --format="- %s" --no-merges --reverse "${since}".. | grep -v "\[minor\]" | tee /dev/tty | pbcopy
