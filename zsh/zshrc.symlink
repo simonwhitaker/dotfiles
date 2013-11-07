@@ -13,6 +13,13 @@ export PATH=$PATH:/usr/local/mysql/bin
 # Add npm bin to path
 export PATH=$PATH:/usr/local/share/npm/bin
 
+# A private directory for executables that aren't checked into my dotfiles repo
+PRIVATE_BIN=$HOME/.private-bin
+if [[ -a $PRIVATE_BIN ]]
+then
+    export PATH=$PRIVATE_BIN:$PATH
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -45,7 +52,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(brew django gibo git git-flow osx python)
-plugins=(brew django gibo git heroku mercurial osx python sublime)
+plugins=(brew django gibo git osx python sublime)
 
 # Enable zmv for pattern-based renaming. Run zmv without args for docs
 autoload -U zmv
@@ -65,11 +72,6 @@ then
     export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
     export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
     export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-fi
-
-if [[ -a /usr/local/bin/xctool ]]
-then
-    alias xcodebuild="xctool"
 fi
 
 if [[ -a /Applications ]]
@@ -153,22 +155,6 @@ bindkey "^[." insert-last-word
 
 # Turn off autocorrect
 unsetopt correct_all
-
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-ssl_expiry() {
-    # Show usage info if not called with a hostname
-    if [ $# -eq 0 ]; then
-        echo "Usage: ssl_expiry HOSTNAME"
-        return 0
-    fi
-
-    domain=$1
-    output=$(echo | openssl s_client -connect ${domain}:443 2>/dev/null | openssl x509 -enddate -noout)
-    end_date=${output##*=}
-    echo $domain $end_date
-}
 
 # Use hub (http://defunkt.io/hub/) if it's installed
 # Do this after sourcing oh-my-zsh to pick up git tab completions
