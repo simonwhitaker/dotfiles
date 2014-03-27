@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/User/Monokai Bright.tmTheme",
+	"color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
 	"draw_indent_guides": false,
 	"font_face": "Menlo",
 	"font_options":
@@ -10,10 +10,12 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"AAAPackageDev",
+		"Rust"
 	],
 	"match_selection": false,
 	"remember_open_files": false,
 	"translate_tabs_to_spaces": true,
-	"word_wrap": "true"
+	"word_wrap": true
 }

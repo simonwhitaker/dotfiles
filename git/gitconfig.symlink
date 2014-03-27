@@ -1,6 +1,6 @@
 [user]
     name = Simon Whitaker
-    email = simon@goosoftware.co.uk
+    email = sw@netcetera.org
 [alias]
     release-notes = !$DOTFILES/bin/git-release-notes
     is-ancestor = !$DOTFILES/bin/git-is-ancestor
