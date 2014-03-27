@@ -13,6 +13,10 @@ export PATH=$PATH:/usr/local/mysql/bin
 # Add npm bin to path
 export PATH=$PATH:/usr/local/share/npm/bin
 
+# Configure grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
 # A private directory for executables that aren't checked into my dotfiles repo
 PRIVATE_BIN=$HOME/.private-bin
 if [[ -a $PRIVATE_BIN ]]
@@ -158,34 +162,61 @@ then
     source ~/.localrc
 fi
 
+# Configure history
+if [ -z $HISTFILE ]; then
+    HISTFILE=$HOME/.zsh_history
+fi
+HISTSIZE=10000
+SAVEHIST=10000
 
-#--------------------------------------------------------
-# Now bootstrap oh-my-zsh
-#--------------------------------------------------------
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
 
-# source $ZSH/oh-my-zsh.sh
+# Configure key bindings
+bindkey -e # emacs mode
 
-#--------------------------------------------------------
-# Tweak oh-my-zsh default behaviour
-#--------------------------------------------------------
+bindkey '\ew' kill-region
+bindkey -s '\el' "ls\n"
+bindkey '^r' history-incremental-search-backward
+bindkey "^[[5~" up-line-or-history
+bindkey "^[[6~" down-line-or-history
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[1~" beginning-of-line
+bindkey "^[OH" beginning-of-line
+bindkey "^[[F"  end-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[OF" end-of-line
+bindkey ' ' magic-space    # also do history expansion on space
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+bindkey '^[[Z' reverse-menu-complete
+
+# Make the delete key (or Fn + Delete on the Mac) work instead of outputting a ~
+bindkey '^?' backward-delete-char
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
+bindkey "\e[3~" delete-char
 
 # Fix up/down arrow behaviour to preferred weirdness
 # Up/down arrows search back/forwards in the history for 
 # a line beginning with the current line up to the cursor.
 # This leaves the cursor in its original position.
 # See zshzle(1) manpage for details.
-# autoload history-search-end
-# zle -N history-beginning-search-backward-end history-search-end
-# zle -N history-beginning-search-forward-end  history-search-end
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end  history-search-end
 
-# bindkey '^[[A' history-beginning-search-backward-end
-# bindkey '^[[B' history-beginning-search-forward-end
-
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-
-[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" up-line-or-beginning-search
-[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
+bindkey '^[[A' history-beginning-search-backward-end
+bindkey '^[[B' history-beginning-search-forward-end
 
 # META-. inserts last word from previous history item
 bindkey "^[." insert-last-word
