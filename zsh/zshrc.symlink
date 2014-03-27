@@ -20,6 +20,22 @@ then
     export PATH=$PRIVATE_BIN:$PATH
 fi
 
+# Enable tab completion
+compinit
+
+autoload -U colors && colors
+
+PROMPT="%{$fg_bold[red]%}➜ %{$fg[green]%}%1~%{$reset_color%}$(git_prompt_info) %{$reset_color%}"
+
+ZSH_THEME_GIT_PROMPT_PREFIX=" ("
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}) %{$fg_bold[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%})"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+
+# Use standard directory listing colours
+export LSCOLORS="exfxcxdxbxegedabagacad"
+
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -27,7 +43,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="generic-remote"
+# ZSH_THEME="generic-remote"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -51,8 +67,20 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(brew django gibo git git-flow osx python)
-plugins=(brew django gibo git osx python sublime)
+PLUGINS=(brew django gibo git osx python sublime)
+PLUGIN_DIR=".zsh-plugins"
+
+for PLUGIN in $PLUGINS
+do
+    PLUGIN_PATH=$PLUGIN_DIR/$PLUGIN
+    if [[ -a $PLUGIN_PATH ]]
+    then
+        echo Loading $PLUGIN
+        source $PLUGIN_PATH
+    else
+        echo "Couldn't find $PLUGIN_PATH"
+    fi
+done
 
 # Enable zmv for pattern-based renaming. Run zmv without args for docs
 autoload -U zmv
@@ -61,8 +89,11 @@ autoload -U zmv
 alias mmv='noglob zmv -W'
 
 # Add some useful aliases
-alias gll="git log --graph --pretty=format:\"%C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%an, %cr)%Creset\""
-alias gla="gll --all"
+alias gll='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%an, %cr)%Creset"'
+alias gla='gll --all'
+alias ll='ls -l'
+alias ls='ls -G' # enable colorized output
+alias history='fc -l 1'
 
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
@@ -80,7 +111,7 @@ then
     alias tm="mate"
     alias tmm="mate ."
     alias zshrc="subl ~/.zshrc"
-    alias ohmyzsh="subl ~/.oh-my-zsh"
+    # alias ohmyzsh="subl ~/.oh-my-zsh"
     alias pljson="plutil -convert json -r -o -"
     alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
     alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
@@ -132,7 +163,7 @@ fi
 # Now bootstrap oh-my-zsh
 #--------------------------------------------------------
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 #--------------------------------------------------------
 # Tweak oh-my-zsh default behaviour
@@ -143,12 +174,18 @@ source $ZSH/oh-my-zsh.sh
 # a line beginning with the current line up to the cursor.
 # This leaves the cursor in its original position.
 # See zshzle(1) manpage for details.
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end  history-search-end
+# autoload history-search-end
+# zle -N history-beginning-search-backward-end history-search-end
+# zle -N history-beginning-search-forward-end  history-search-end
 
-bindkey '^[[A' history-beginning-search-backward-end
-bindkey '^[[B' history-beginning-search-forward-end
+# bindkey '^[[A' history-beginning-search-backward-end
+# bindkey '^[[B' history-beginning-search-forward-end
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+
+[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" up-line-or-beginning-search
+[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
 
 # META-. inserts last word from previous history item
 bindkey "^[." insert-last-word
