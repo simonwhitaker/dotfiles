@@ -1,3 +1,0 @@
-#!/bin/sh
-
-rsync --recursive --verbose --copy-links $DOTFILES/oh-my-zsh/custom/* ~/.oh-my-zsh/custom

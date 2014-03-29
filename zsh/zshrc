@@ -1,0 +1,77 @@
+#------------------------------------------------------------
+# Colours - need to load this early, lots of other stuff 
+# depends on it
+#------------------------------------------------------------
+
+autoload -U colors && colors
+
+#------------------------------------------------------------
+# Load plugins
+#------------------------------------------------------------
+
+PLUGIN_DIR=".zsh-plugins"
+for PLUGIN in $(ls $PLUGIN_DIR)
+do
+    echo Loading $PLUGIN
+    source $PLUGIN_DIR/$PLUGIN
+done
+
+#------------------------------------------------------------
+# Build the PATH
+#------------------------------------------------------------
+
+export DOTFILES=$HOME/.dotfiles
+export PATH=$DOTFILES/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:/usr/local/share/npm/bin
+
+#------------------------------------------------------------
+# Private stuff
+#------------------------------------------------------------
+
+# A private directory for executables that aren't checked into my dotfiles repo
+PRIVATE_BIN=$HOME/.private-bin
+if [[ -a $PRIVATE_BIN ]]
+then
+    export PATH=$PRIVATE_BIN:$PATH
+fi
+
+# Local ZSH config
+PRIVATE_CONFIG=$HOME/.localrc
+if [[ -a $PRIVATE_CONFIG ]]
+then
+    source $PRIVATE_CONFIG
+fi
+
+#------------------------------------------------------------
+# Prompt
+#------------------------------------------------------------
+
+# Allow command substitution in the prompt (e.g. git_prompt_info). See http://superuser.com/a/142114
+setopt PROMPT_SUBST
+# Must use single quotes here, not double quotes! See http://superuser.com/a/546735/62672
+PROMPT='%{$fg_bold[red]%}➜ %{$fg[green]%}%1~%{$reset_color%}$(git_prompt_info) %{$reset_color%}'
+
+#------------------------------------------------------------
+# Configure various commands to use colour output
+#------------------------------------------------------------
+
+# Configure grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
+# Use standard directory listing colours
+export LSCOLORS='exfxcxdxbxegedabagacad'
+
+#------------------------------------------------------------
+# Misc bits and bods
+#------------------------------------------------------------
+
+# Turn off autocorrect
+unsetopt correct_all
+
+# Use hub (http://defunkt.io/hub/) if it's installed
+# Do this after sourcing oh-my-zsh to pick up git tab completions
+eval "$(hub alias -s)"
+
