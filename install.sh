@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Get absolute path to dotfiles dir (see http://stackoverflow.com/q/242538/263871; readlink -f doesn't work on OSX)
 pushd $(dirname "$0") > /dev/null
