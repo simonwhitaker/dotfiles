@@ -27,24 +27,6 @@ export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:/usr/local/share/npm/bin
 
 #------------------------------------------------------------
-# Private stuff
-#------------------------------------------------------------
-
-# A private directory for executables that aren't checked into my dotfiles repo
-PRIVATE_BIN=$HOME/.private-bin
-if [[ -a $PRIVATE_BIN ]]
-then
-    export PATH=$PRIVATE_BIN:$PATH
-fi
-
-# Local ZSH config
-PRIVATE_CONFIG=$HOME/.localrc
-if [[ -a $PRIVATE_CONFIG ]]
-then
-    source $PRIVATE_CONFIG
-fi
-
-#------------------------------------------------------------
 # Prompt
 #------------------------------------------------------------
 
@@ -74,4 +56,22 @@ unsetopt correct_all
 # Use hub (http://defunkt.io/hub/) if it's installed
 # Do this after sourcing oh-my-zsh to pick up git tab completions
 eval "$(hub alias -s)"
+
+#------------------------------------------------------------
+# Private stuff
+#------------------------------------------------------------
+
+# A private directory for executables that aren't checked into my dotfiles repo
+PRIVATE_BIN=$HOME/.private-bin
+if [[ -a $PRIVATE_BIN ]]
+then
+    export PATH=$PRIVATE_BIN:$PATH
+fi
+
+# Local ZSH config
+PRIVATE_CONFIG=$HOME/.localrc
+if [[ -a $PRIVATE_CONFIG ]]
+then
+    source $PRIVATE_CONFIG
+fi
 
