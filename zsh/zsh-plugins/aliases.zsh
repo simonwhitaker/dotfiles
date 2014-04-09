@@ -9,3 +9,4 @@ alias mmv='noglob zmv -W'
 alias ll='ls -l'
 alias ls='ls -G' # enable colorized output
 alias history='fc -l 1'
+alias httphere='python -m SimpleHTTPServer'
