@@ -53,13 +53,6 @@ export LSCOLORS='exfxcxdxbxegedabagacad'
 # Turn off autocorrect
 unsetopt correct_all
 
-# Use hub (http://defunkt.io/hub/) if it's installed
-# Do this after sourcing oh-my-zsh to pick up git tab completions
-if hash hub 2>/dev/null
-then
-    eval "$(hub alias -s)"
-fi
-
 #------------------------------------------------------------
 # Private stuff
 #------------------------------------------------------------
