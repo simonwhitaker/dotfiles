@@ -16,22 +16,6 @@ then
         rm ~/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist 2>/dev/null || echo "LaunchAgent not found"
     }
 
-    export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
-
-    export AWS_RDS_HOME="$HOME/Library/Developer/RDSCli"
-    export PATH="$AWS_RDS_HOME/bin:$PATH"
-
-    export AWS_IAM_HOME="$HOME/Library/Developer/IAMCli"
-    export PATH="$AWS_IAM_HOME/bin:$PATH"
-
-    # Elastic Beanstalk tools
-    # It's important that these use python 2.7, hence an alias rather
-    # than adding the parent dir to $PATH
-    alias eb="python2.7 $HOME/Library/Developer/AWS-ElasticBeanstalk-CLI/eb/macosx/python2.7/eb"
-
-    # Add Elastic Beanstalk CLI tools to path
-    export PATH="$HOME/Library/Developer/AWS-ElasticBeanstalk-CLI/api/bin:$PATH"
-
     export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip
     
     export JAVA_HOME=/Library/Java/Home
