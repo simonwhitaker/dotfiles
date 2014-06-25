@@ -4,6 +4,7 @@
 [alias]
     release-notes = !$DOTFILES/bin/git-release-notes
     is-ancestor = !$DOTFILES/bin/git-is-ancestor
+    flip-flop = !$DOTFILES/bin/git-flip-flop
 [difftool]
     prompt = false
 [diff]
