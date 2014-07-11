@@ -9,7 +9,7 @@ autoload -U colors && colors
 # Load plugins
 #------------------------------------------------------------
 
-PLUGIN_DIR=".zsh-plugins"
+PLUGIN_DIR="$HOME/.zsh-plugins"
 for PLUGIN in $(ls $PLUGIN_DIR)
 do
 #    echo Loading $PLUGIN
