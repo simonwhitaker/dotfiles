@@ -17,6 +17,4 @@ then
     }
 
     export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip
-    
-    export JAVA_HOME=/Library/Java/Home
 fi
