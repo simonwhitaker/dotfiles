@@ -53,6 +53,8 @@ export LSCOLORS='exfxcxdxbxegedabagacad'
 # Turn off autocorrect
 unsetopt correct_all
 
+export EDITOR=vim
+
 #------------------------------------------------------------
 # Private stuff
 #------------------------------------------------------------
