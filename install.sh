@@ -16,3 +16,7 @@ link lldb/lldbinit
 link vim/vimrc
 link zsh/zshrc
 link zsh/zsh-plugins
+
+# Create the directories that .vimrc relies on
+mkdir -p $HOME/.vim/backup
+mkdir -p $HOME/.vim/temp
