@@ -17,4 +17,8 @@ then
     }
 
     export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip
+
+    function man-preview() {
+        man -t "$@" | open -f -a Preview
+    }
 fi

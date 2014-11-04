@@ -12,6 +12,9 @@ alias gdc='git diff --cached'
 compdef _git gdc=git-diff
 alias gl='git pull'
 compdef _git gl=git-pull
+alias gf='git fetch'
+compdef _git gf=git-fetch
+alias gfo='git fetch origin'
 alias gup='git pull --rebase'
 compdef _git gup=git-fetch
 alias gp='git push'
@@ -80,9 +83,6 @@ alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias gclean='git reset --hard && git clean -dfx'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
-
-#remove the gf alias
-#alias gf='git ls-files | grep'
 
 alias gpoat='git push origin --all && git push origin --tags'
 alias gmt='git mergetool --no-prompt'
