@@ -7,7 +7,15 @@ popd > /dev/null
 
 
 link() {
-    ln -sf "$DOTFILES_DIR/$1" "$HOME/.$(basename $1)"
+  ln_source="$DOTFILES_DIR/$1"
+  ln_target="$HOME/.$(basename $1)"
+  if [ -L $ln_target ]
+  then
+    echo [Skipping] $ln_source -\> $ln_target, target symlink already exists
+  else
+    echo [Installing] $ln_source -\> $ln_target
+    ln -sf $ln_source $ln_target
+  fi
 }
 
 link git/gitconfig
