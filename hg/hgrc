@@ -2,7 +2,6 @@
 hgext.extdiff =
 fbamend=
 evolve=!
-prompt = $HOME/src/3p/hg-prompt/prompt.py
 churn =
 
 [extdiff]
