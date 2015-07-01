@@ -14,6 +14,7 @@ alias hgo='hg outgoing'
 alias hgp='hg push'
 alias hgs='hg status'
 alias hgsl='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {author|user}: {desc|strip|firstline}\n" '
+alias hgll='hg log  -T "{label(\"magenta\", node|short)} {date|isodate} {if(phabdiff, label(\"green\", phabdiff), \"(no diff)\")} {label(\"yellow\", author|user)} {desc|firstline}\n"'
 # this is the 'git commit --amend' equivalent
 alias hgca='hg qimport -r tip ; hg qrefresh -e ; hg qfinish tip'
 # list unresolved files (since hg does not list unmerged files in the status command)
