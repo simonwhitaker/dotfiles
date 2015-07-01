@@ -54,6 +54,7 @@ export LSCOLORS='exfxcxdxbxegedabagacad'
 unsetopt correct_all
 
 export EDITOR=vim
+export REACT_EDITOR=atom
 
 #------------------------------------------------------------
 # Private stuff
