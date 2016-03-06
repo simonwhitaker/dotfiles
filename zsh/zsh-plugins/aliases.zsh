@@ -10,3 +10,5 @@ alias ll='ls -l'
 alias ls='ls -G' # enable colorized output
 alias history='fc -l 1'
 alias httphere='python -m SimpleHTTPServer'
+
+alias mkvirtualenv3='mkvirtualenv --python=/usr/local/bin/python3'
