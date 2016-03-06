@@ -29,9 +29,9 @@ set incsearch               " BUT do highlight as you type you search phrase
 set ai                      " autoindent
 "set si                     " smartindent 
 "set cindent                " do c-style indenting
-set tabstop=4               " tab spacing (settings below are just to unify it)
-set softtabstop=4           " unify
-set shiftwidth=4            " unify 
+set tabstop=2               " tab spacing (settings below are just to unify it)
+set softtabstop=2           " unify
+set shiftwidth=2            " unify 
 set expandtab               " convert tabs to spaces
 "set noexpandtab            " real tabs please!
 "set nowrap                 " do not wrap lines  
@@ -74,3 +74,14 @@ if has("autocmd")
  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
    \| exe "normal! g'\"" | endif
 endif
+
+function SourceIfExists(file)
+  if filereadable(a:file)
+    execute "source " . a:file
+  endif
+endfunction
+
+call SourceIfExists($ADMIN_SCRIPTS . "/master.vimrc")
+call SourceIfExists("/home/engshare/admin/scripts/vim/biggrep.vim")
+call SourceIfExists("/phony-path/for/testing/SourceIfExists.function")
+
