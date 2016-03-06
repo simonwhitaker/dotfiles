@@ -1,8 +1,3 @@
-
-
-export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
-
-
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export WORKON_HOME=$HOME/.virtualenvs
 vew_bootstrap=/usr/local/bin/virtualenvwrapper.sh

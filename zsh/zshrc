@@ -74,3 +74,6 @@ then
     source $PRIVATE_CONFIG
 fi
 
+
+PERL_MB_OPT="--install_base \"/Users/simon/Library/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/simon/Library/perl5"; export PERL_MM_OPT;

@@ -16,8 +16,6 @@ then
         rm ~/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist 2>/dev/null || echo "LaunchAgent not found"
     }
 
-    export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip
-
     function man-preview() {
         man -t "$@" | open -f -a Preview
     }
