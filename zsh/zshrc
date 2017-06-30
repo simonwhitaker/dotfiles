@@ -53,7 +53,7 @@ export LSCOLORS='exfxcxdxbxegedabagacad'
 # Turn off autocorrect
 unsetopt correct_all
 
-export EDITOR=vim
+export EDITOR=emacs
 export REACT_EDITOR=atom
 
 #------------------------------------------------------------
