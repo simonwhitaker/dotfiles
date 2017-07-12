@@ -8,7 +8,7 @@ popd > /dev/null
 
 link() {
   ln_source="$DOTFILES_DIR/$1"
-  ln_target="$HOME/.$(basename $1)"
+  ln_target="$HOME/$2"
   if [ -L $ln_target ]
   then
     echo [Skipping] $ln_source -\> $ln_target, target symlink already exists
@@ -18,12 +18,13 @@ link() {
   fi
 }
 
-link git/gitconfig
-link git/gitignore
-link lldb/lldbinit
-link vim/vimrc
-link zsh/zshrc
-link zsh/zsh-plugins
+link git/gitconfig .gitconfig
+link git/gitignore .gitignore
+link lldb/lldbinit .lldbinit
+link vim/vimrc .vimrc
+link zsh/zshrc .zshrc
+link zsh/zsh-plugins .zsh-plugins
+link emacs/init.el .emacs.d/init.el
 
 # Create the directories that .vimrc relies on
 mkdir -p $HOME/.vim/backup
