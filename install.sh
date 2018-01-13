@@ -18,13 +18,15 @@ link() {
   fi
 }
 
+link emacs/init.el .emacs.d/init.el
 link git/gitconfig .gitconfig
 link git/gitignore .gitignore
 link lldb/lldbinit .lldbinit
 link vim/vimrc .vimrc
-link zsh/zshrc .zshrc
+link zsh/zprofile .zprofile
 link zsh/zsh-plugins .zsh-plugins
-link emacs/init.el .emacs.d/init.el
+link zsh/zshenv .zshenv
+link zsh/zshrc .zshrc
 
 # Create the directories that .vimrc relies on
 mkdir -p $HOME/.vim/backup

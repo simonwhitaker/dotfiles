@@ -1,4 +1,19 @@
 #------------------------------------------------------------
+#
+# .zshrc: read for all new *interactive login* shells
+#
+# From `man zsh`:
+#
+# Commands  are  first  read from /etc/zshenv; this cannot be overridden.
+# [...]
+# Commands are then read from $ZDOTDIR/.zshenv.  If the shell is a  login
+# shell,  commands  are  read from /etc/zprofile and then $ZDOTDIR/.zpro-
+# file.  Then, if the  shell  is  interactive,  commands  are  read  from
+# /etc/zshrc  and then $ZDOTDIR/.zshrc.  Finally, if the shell is a login
+# shell, /etc/zlogin and $ZDOTDIR/.zlogin are read.
+#------------------------------------------------------------
+
+#------------------------------------------------------------
 # Colours - need to load this early, lots of other stuff
 # depends on it
 #------------------------------------------------------------

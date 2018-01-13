@@ -1,0 +1,26 @@
+#------------------------------------------------------------
+#
+# .zshprofile: read for all new *login* shells
+#
+# From `man zsh`:
+#
+# Commands  are  first  read from /etc/zshenv; this cannot be overridden.
+# [...]
+# Commands are then read from $ZDOTDIR/.zshenv.  If the shell is a  login
+# shell,  commands  are  read from /etc/zprofile and then $ZDOTDIR/.zpro-
+# file.  Then, if the  shell  is  interactive,  commands  are  read  from
+# /etc/zshrc  and then $ZDOTDIR/.zshrc.  Finally, if the shell is a login
+# shell, /etc/zlogin and $ZDOTDIR/.zlogin are read.
+#------------------------------------------------------------
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .zprofile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+#export PATH
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Setting PATH for Python 3.5
+# The original version is saved in .zprofile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+#export PATH
