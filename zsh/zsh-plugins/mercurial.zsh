@@ -28,7 +28,7 @@ function in_hg() {
 
 function hg_get_branch_name() {
   if [ $(in_hg) ]; then
-    echo $(hg branch)
+    echo $(hg branch 2>/dev/null)
   fi
 }
 
