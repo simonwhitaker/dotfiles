@@ -142,27 +142,6 @@ function _git_log_prettily(){
 alias glp="_git_log_prettily"
 compdef _git glp=git-log
 
-# Work In Progress (wip)
-# These features allow to pause a branch development and switch to another one (wip)
-# When you want to go back to work, just unwip it
-#
-# This function return a warning if the current branch is a wip
-function work_in_progress() {
-  if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
-    echo "WIP!!"
-  fi
-}
-# these alias commit and uncomit wip branches
-alias gwip='git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m "--wip--"'
-alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
-
-# these alias ignore changes to file
-alias gignore='git update-index --assume-unchanged'
-alias gunignore='git update-index --no-assume-unchanged'
-# list temporarily ignored files
-alias gignored='git ls-files -v | grep "^[[:lower:]]"'
-
-
 ZSH_THEME_GIT_PROMPT_PREFIX=" ("
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}) %{$fg_bold[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNKNOWN="%{$reset_color%}) %{$fg_bold[yellow]%}?%{$reset_color%}"
