@@ -24,6 +24,7 @@ link git/gitignore .gitignore
 link lldb/lldbinit .lldbinit
 link vim/vimrc .vimrc
 link zsh/zprofile .zprofile
+link zsh/zsh-completions .zsh-completions
 link zsh/zsh-plugins .zsh-plugins
 link zsh/zshenv .zshenv
 link zsh/zshrc .zshrc

@@ -1,3 +1,5 @@
+fpath+=~/.zsh-completions
+
 autoload -U compinit && compinit -i
 
 unsetopt menu_complete   # do not autoselect the first completion entry

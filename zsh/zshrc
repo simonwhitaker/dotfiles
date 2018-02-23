@@ -62,7 +62,7 @@ export GREP_COLOR='1;32'
 export LSCOLORS='exfxcxdxbxegedabagacad'
 
 #------------------------------------------------------------
-# Misc bits and bods
+# Misc bits and bobs
 #------------------------------------------------------------
 
 # Turn off autocorrect
