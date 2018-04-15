@@ -34,6 +34,9 @@ link git/gitignore .gitignore
 # LLDB
 link lldb/lldbinit .lldbinit
 
+# Tmux
+link tmux/tmux.conf .tmux.conf
+
 # Vim
 mkdir -p $HOME/.vim/backup
 mkdir -p $HOME/.vim/temp
