@@ -18,22 +18,30 @@ link() {
   fi
 }
 
+# Emacs
 link emacs/init.el .emacs.d/init.el
-link git/gitconfig .gitconfig
-link git/gitignore .gitignore
-link lldb/lldbinit .lldbinit
-link vim/vimrc .vimrc
-link zsh/zprofile .zprofile
-link zsh/zsh-completions .zsh-completions
-link zsh/zsh-plugins .zsh-plugins
-link zsh/zshenv .zshenv
-link zsh/zshrc .zshrc
 
+# Fish
 mkdir -p .config/fish
 link fish/config.fish .config/fish/config.fish
 link fish/completions .config/fish/completions
 link fish/functions .config/fish/functions
 
-# Create the directories that .vimrc relies on
+# Git
+link git/gitconfig .gitconfig
+link git/gitignore .gitignore
+
+# LLDB
+link lldb/lldbinit .lldbinit
+
+# Vim
 mkdir -p $HOME/.vim/backup
 mkdir -p $HOME/.vim/temp
+link vim/vimrc .vimrc
+
+# Zsh
+link zsh/zprofile .zprofile
+link zsh/zsh-completions .zsh-completions
+link zsh/zsh-plugins .zsh-plugins
+link zsh/zshenv .zshenv
+link zsh/zshrc .zshrc
