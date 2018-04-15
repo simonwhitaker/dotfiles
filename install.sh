@@ -29,6 +29,11 @@ link zsh/zsh-plugins .zsh-plugins
 link zsh/zshenv .zshenv
 link zsh/zshrc .zshrc
 
+mkdir -p .config/fish
+link fish/config.fish .config/fish/config.fish
+link fish/completions .config/fish/completions
+link fish/functions .config/fish/functions
+
 # Create the directories that .vimrc relies on
 mkdir -p $HOME/.vim/backup
 mkdir -p $HOME/.vim/temp
