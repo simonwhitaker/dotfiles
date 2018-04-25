@@ -1,20 +1,33 @@
-[extensions]
-hgext.extdiff =
-fbamend=
-evolve=!
-churn =
-
-[extdiff]
-cmd.ksdiff = /usr/local/bin/ksdiff
-opts.ksdiff = --changeset --wait --filelist
+# example config (see "hg help config" for more info)
 
 [ui]
-# Fail to merge by default, otherwise rebases/merges with conflicts throw up
-# a shit ton of Kaleidoscope or vim sessions
-#merge = Kaleidoscope
-#merge = :fail
-username = Simon Whitaker <swhitaker@fb.com>
+# name and email, e.g.
+# username = Jane Doe <jdoe@example.com>
+username = Simon Whitaker <sw@netcetera.org>
 
-[merge-tools]
-Kaleidoscope.executable = /usr/local/bin/ksdiff
-Kaleidoscope.args = --merge --output $output --base $base -- $local $other
+[extensions]
+# uncomment these lines to enable some popular extensions
+# (see "hg help extensions" for more info)
+# pager =
+progress =
+color =
+rebase =
+record =
+histedit =
+smartlog = /Users/simon/src/3p/hg-experimental/hgext3rd/smartlog.py
+
+[alias]
+sl=smartlog --template "{shortest(node)}  {author|user}  {bookmarks % '{ifeq(bookmark, current, label(\"yellow\", \" {bookmark}*\"), label(\"green\", \" {bookmark}\"))}'} {ifeq(branch, 'default', '', label(\"bold\", branch))}\n{desc|firstline}\n\n"
+
+[smartlog]
+# (remote) names to show
+#repos = , remote/, default/
+#names = @, master, stable
+# move the top non-public stack to the second column
+indentnonpublic = True
+# whether to use ancestor cache (speed up on huge repos)
+# useancestorcache = False
+
+
+[extensions]
+hgext.extdiff =

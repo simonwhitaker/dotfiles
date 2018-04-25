@@ -31,6 +31,9 @@ link fish/functions .config/fish/functions
 link git/gitconfig .gitconfig
 link git/gitignore .gitignore
 
+# Hg
+link hg/hgrc .hgrc
+
 # LLDB
 link lldb/lldbinit .lldbinit
 
