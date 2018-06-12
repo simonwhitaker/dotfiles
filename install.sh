@@ -22,10 +22,12 @@ link() {
 link emacs/init.el .emacs.d/init.el
 
 # Fish
-mkdir -p .config/fish
+mkdir -p $HOME/.config/fish
 link fish/config.fish .config/fish/config.fish
-link fish/completions .config/fish/completions
 link fish/functions .config/fish/functions
+
+mkdir -p $HOME/.config/fish/completions
+link fish/completions/rustup.fish .config/fish/completions/rustup.fish
 
 # Git
 link git/gitconfig .gitconfig
