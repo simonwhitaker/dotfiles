@@ -14,6 +14,8 @@ end
 
 set -gx EDITOR (type -p emacs)
 
+set -gx DOTFILES $HOME/src/misc/dotfiles
+
 alias gb='git branch'
 alias gcm='git checkout master'
 alias gco='git checkout'
@@ -24,3 +26,7 @@ alias gla='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(cyan)%d%Creset
 alias gll='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%an, %cr)%Creset"'
 alias gp='git push'
 alias gst='git status'
+
+# Relies on git-sl being installed and aliased to `git sl`
+# https://bitbucket.org/facebook/hg-experimental/src/f20ef49301c4436a0f7a4d11de65697a5f8e5ab4/contrib/git-sl?at=default&fileviewer=file-view-default
+alias gsl='git sl'
