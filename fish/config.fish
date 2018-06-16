@@ -13,3 +13,14 @@ if test -d $__sw_cargo_bin
 end
 
 set -gx EDITOR (type -p emacs)
+
+alias gb='git branch'
+alias gcm='git checkout master'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git pull'
+alias gla='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%an, %cr)%Creset" --all'
+alias gll='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%an, %cr)%Creset"'
+alias gp='git push'
+alias gst='git status'
