@@ -1,4 +1,4 @@
-eval (/usr/bin/python -m virtualfish)
+eval (/usr/bin/python -m virtualfish ^ /dev/null)
 
 # cd to project directory on activating a virtualenv
 function switch_to_virtualenv_directory --on-event virtualenv_did_activate
