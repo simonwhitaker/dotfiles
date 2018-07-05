@@ -39,6 +39,9 @@ link hg/hgrc .hgrc
 # LLDB
 link lldb/lldbinit .lldbinit
 
+# Octave
+link octave/octaverc .octaverc
+
 # Tmux
 link tmux/tmux.conf .tmux.conf
 
