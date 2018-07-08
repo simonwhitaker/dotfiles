@@ -27,7 +27,9 @@ link fish/config.fish .config/fish/config.fish
 link fish/functions .config/fish/functions
 
 mkdir -p $HOME/.config/fish/completions
-link fish/completions/rustup.fish .config/fish/completions/rustup.fish
+for F in $(ls fish/completions); do
+    link fish/completions/$F .config/fish/completions/$(basename $F)
+done
 
 # Git
 link git/gitconfig .gitconfig
