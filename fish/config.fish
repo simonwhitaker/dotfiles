@@ -30,3 +30,5 @@ alias gst='git status'
 # Relies on git-sl being installed and aliased to `git sl`
 # https://bitbucket.org/facebook/hg-experimental/src/f20ef49301c4436a0f7a4d11de65697a5f8e5ab4/contrib/git-sl?at=default&fileviewer=file-view-default
 alias gsl='git sl'
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; else; . '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; end; end
