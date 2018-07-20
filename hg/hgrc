@@ -14,10 +14,10 @@ color =
 rebase =
 record =
 histedit =
-smartlog = /Users/simon/src/3p/hg-experimental/hgext3rd/smartlog.py
+#smartlog = /Users/simon/src/3p/hg-experimental/hgext3rd/smartlog.py
 
 [alias]
-sl=smartlog --template "{shortest(node)}  {author|user}  {bookmarks % '{ifeq(bookmark, current, label(\"yellow\", \" {bookmark}*\"), label(\"green\", \" {bookmark}\"))}'} {ifeq(branch, 'default', '', label(\"bold\", branch))}\n{desc|firstline}\n\n"
+#sl=smartlog --template "{shortest(node)}  {author|user}  {bookmarks % '{ifeq(bookmark, current, label(\"yellow\", \" {bookmark}*\"), label(\"green\", \" {bookmark}\"))}'} {ifeq(branch, 'default', '', label(\"bold\", branch))}\n{desc|firstline}\n\n"
 
 [smartlog]
 # (remote) names to show
