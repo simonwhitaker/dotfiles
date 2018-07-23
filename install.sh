@@ -19,6 +19,7 @@ link() {
 }
 
 # Emacs
+mkdir -p $HOME/.emacs.d
 link emacs/init.el .emacs.d/init.el
 
 # Fish
