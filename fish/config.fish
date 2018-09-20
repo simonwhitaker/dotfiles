@@ -17,7 +17,9 @@ set -gx EDITOR (type -p emacs)
 set -gx DOTFILES $HOME/src/misc/dotfiles
 
 set -gx GOPATH $HOME/src/go
-set PATH $GOPATH/bin $PATH
+if test -f $GOPATH/bin
+   set PATH $GOPATH/bin $PATH
+end
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; else; . '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; end; end
