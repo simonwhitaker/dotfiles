@@ -17,7 +17,7 @@ set -gx EDITOR (type -p emacs)
 set -gx DOTFILES $HOME/src/misc/dotfiles
 
 set -gx GOPATH $HOME/src/go
-if test -f $GOPATH/bin
+if test -d $GOPATH/bin
    set PATH $GOPATH/bin $PATH
 end
 
