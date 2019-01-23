@@ -34,6 +34,7 @@ done
 
 # Git
 link git/gitconfig .gitconfig
+link git/gitconfig.whitaker-solutions .gitconfig.whitaker-solutions
 link git/gitignore .gitignore
 
 # Hg
