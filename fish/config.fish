@@ -7,9 +7,10 @@ function switch_to_virtualenv_directory --on-event virtualenv_did_activate
     end
 end
 
-set __sw_cargo_bin "$HOME/.cargo/bin"
-if test -d $__sw_cargo_bin
-   set PATH $__sw_cargo_bin $PATH
+function __sw_add_to_path
+    if test -d $argv
+        set PATH $argv $PATH
+    end
 end
 
 set -gx EDITOR (type -p emacs)
@@ -17,9 +18,9 @@ set -gx EDITOR (type -p emacs)
 set -gx DOTFILES $HOME/src/misc/dotfiles
 
 set -gx GOPATH $HOME/src/go
-if test -d $GOPATH/bin
-   set PATH $GOPATH/bin $PATH
-end
+__sw_add_to_path "$GOPATH/bin"
+__sw_add_to_path "$HOME/.cargo/bin"
+__sw_add_to_path "$HOME/src/3p/arcanist/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; else; . '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; end; end
