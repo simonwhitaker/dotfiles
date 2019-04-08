@@ -48,7 +48,7 @@ export PATH=$PATH:/usr/local/share/npm/bin
 # Allow command substitution in the prompt (e.g. git_prompt_info). See http://superuser.com/a/142114
 setopt PROMPT_SUBST
 # Must use single quotes here, not double quotes! See http://superuser.com/a/546735/62672
-PROMPT='%{$fg_bold[red]%}➜ %{$fg[green]%}%1~%{$reset_color%}$(git_prompt_info)$(hg_prompt_info) %{$reset_color%}'
+PROMPT='%{$fg_bold[red]%}➜ %{$fg[cyan]%}%1~%{$reset_color%}$(git_prompt_info)$(hg_prompt_info) %{$reset_color%}'
 
 #------------------------------------------------------------
 # Configure various commands to use colour output
