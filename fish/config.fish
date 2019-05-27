@@ -14,13 +14,19 @@ function __sw_add_to_path
 end
 
 set -gx EDITOR (type -p emacs)
-
 set -gx DOTFILES $HOME/src/misc/dotfiles
-
 set -gx GOPATH $HOME/src/go
+
+set local_config ~/.config/fish/config.local.fish
+if test -f $local_config
+    . $local_config
+end
+
+
 __sw_add_to_path "$GOPATH/bin"
 __sw_add_to_path "$HOME/.cargo/bin"
 __sw_add_to_path "$HOME/src/3p/arcanist/bin"
+__sw_add_to_path "$HOME/Library/Python/3.7/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; else; . '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; end; end
