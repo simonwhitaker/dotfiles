@@ -47,3 +47,9 @@
 	prune = true
 [includeIf "gitdir:~/src/clients/"]
     path = ~/.gitconfig.whitaker-solutions
+[includeIf "gitdir:~/src/go/src/github.com/antha-lang/"]
+    path = ~/.gitconfig.whitaker-solutions
+[includeIf "gitdir:~/src/go/src/github.com/Synthace/"]
+    path = ~/.gitconfig.whitaker-solutions
+[includeIf "gitdir:~/src/go/src/repos.antha.com/"]
+    path = ~/.gitconfig.whitaker-solutions
