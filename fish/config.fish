@@ -17,6 +17,9 @@ set -gx EDITOR (type -p emacs)
 set -gx DOTFILES $HOME/src/misc/dotfiles
 set -gx GOPATH $HOME/src/go
 
+set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
+  
 set local_config ~/.config/fish/config.local.fish
 if test -f $local_config
     . $local_config
