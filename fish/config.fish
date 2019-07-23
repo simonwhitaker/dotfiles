@@ -9,7 +9,7 @@ end
 
 function __sw_add_to_path
     if test -d $argv
-        set PATH $argv $PATH
+        set -g fish_user_paths $argv $fish_user_paths
     end
 end
 
@@ -27,6 +27,7 @@ __sw_add_to_path "$GOPATH/bin"
 __sw_add_to_path "$HOME/.cargo/bin"
 __sw_add_to_path "$HOME/src/3p/arcanist/bin"
 __sw_add_to_path "$HOME/Library/Python/3.7/bin"
+__sw_add_to_path "/usr/local/sbin"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; else; . '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; end; end
