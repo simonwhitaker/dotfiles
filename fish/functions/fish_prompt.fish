@@ -93,7 +93,7 @@ function fish_prompt --description 'Write out the prompt'
     # Show current active Google Cloud config
     set -l gcloud_active_config ~/.config/gcloud/active_config
     if test -e $gcloud_active_config
-        set_color white --dim
+        set_color brblack
         echo -n "["(cat $gcloud_active_config)"] "
         set_color normal
     end
