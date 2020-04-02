@@ -53,5 +53,5 @@
     path = ~/.gitconfig.whitaker-solutions
 [includeIf "gitdir:~/src/go/src/repos.antha.com/"]
     path = ~/.gitconfig.whitaker-solutions
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+[url "git@github.com:Synthace/"]
+	insteadOf = https://github.com/Synthace/
