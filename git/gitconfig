@@ -55,3 +55,8 @@
     path = ~/.gitconfig.whitaker-solutions
 [url "git@github.com:Synthace/"]
 	insteadOf = https://github.com/Synthace/
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
