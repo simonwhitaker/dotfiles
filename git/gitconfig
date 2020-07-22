@@ -1,13 +1,6 @@
 [user]
     name = Simon Whitaker
     email = sw@netcetera.org
-[alias]
-    release-notes = !$DOTFILES/bin/git-release-notes
-    is-ancestor = !$DOTFILES/bin/git-is-ancestor
-    flip-flop = !$DOTFILES/bin/git-flip-flop
-    publish = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-    sl = !$DOTFILES/bin/git-sl
-	root = rev-parse --show-toplevel
 [difftool]
     prompt = false
 [diff]
@@ -24,12 +17,6 @@
     quotepath = false
     excludesfile = /Users/simon/.gitignore
 	autocrlf = input
-[difftool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [github]
     user = simonwhitaker
 [difftool "Kaleidoscope"]
