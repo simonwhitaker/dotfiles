@@ -1,0 +1,15 @@
+#!/bin/bash
+set -o nounset -o pipefail -o noclobber -o errexit
+
+JQ=$(command -v jq 2>/dev/null || { echo >&2 "Please install jq (https://stedolan.github.io/jq/)"; exit 127; })
+
+function sort_json {
+    cat "$1" | $JQ -S '.'
+}
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $(basename $0) FILE1 FILE2"
+    exit 1
+fi
+
+diff <(sort_json "$1") <(sort_json "$2")
