@@ -1,4 +1,9 @@
 function fish_prompt --description 'Write out the prompt'
+    if set -q SW_SIMPLE_PROMPT
+        echo -n "\$ "
+        return
+    end
+
     set -l last_pipestatus $pipestatus
 
     if not set -q __fish_git_prompt_show_informative_status
