@@ -39,4 +39,10 @@ __sw_add_to_path "/usr/local/opt/ruby/bin"
 __sw_add_to_path "/usr/local/lib/ruby/gems/2.6.0/bin/"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc' ]; . '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; end
+if [ -f "$HOME/Library/Developer/google-cloud-sdk/path.fish.inc" ]
+    . "$HOME/Library/Developer/google-cloud-sdk/path.fish.inc"
+end
+
+# if [ -f "$HOME/Library/Developer/miniconda3/etc/fish/conf.d/conda.fish" ]
+#     . "$HOME/Library/Developer/miniconda3/etc/fish/conf.d/conda.fish"
+# end
