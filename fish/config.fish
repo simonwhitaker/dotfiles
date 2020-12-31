@@ -32,7 +32,6 @@ end
 __sw_add_to_path "$GOPATH/bin"
 __sw_add_to_path "$HOME/.cargo/bin"
 __sw_add_to_path "$HOME/src/3p/arcanist/bin"
-__sw_add_to_path "$HOME/Library/Python/3.7/bin"
 __sw_add_to_path "/usr/local/sbin"
 __sw_add_to_path "$DOTFILES/bin"
 __sw_add_to_path "/usr/local/opt/ruby/bin"
@@ -42,7 +41,3 @@ __sw_add_to_path "/usr/local/lib/ruby/gems/2.6.0/bin/"
 if [ -f "$HOME/Library/Developer/google-cloud-sdk/path.fish.inc" ]
     . "$HOME/Library/Developer/google-cloud-sdk/path.fish.inc"
 end
-
-# if [ -f "$HOME/Library/Developer/miniconda3/etc/fish/conf.d/conda.fish" ]
-#     . "$HOME/Library/Developer/miniconda3/etc/fish/conf.d/conda.fish"
-# end
