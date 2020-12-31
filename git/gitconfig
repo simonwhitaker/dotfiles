@@ -34,12 +34,6 @@
     path = ~/.gitconfig.whitaker-solutions
 [includeIf "gitdir:~/src/whitakersolutions/"]
     path = ~/.gitconfig.whitaker-solutions
-[includeIf "gitdir:~/src/go/src/github.com/antha-lang/"]
-    path = ~/.gitconfig.whitaker-solutions
-[includeIf "gitdir:~/src/go/src/github.com/Synthace/"]
-    path = ~/.gitconfig.whitaker-solutions
-[includeIf "gitdir:~/src/go/src/repos.antha.com/"]
-    path = ~/.gitconfig.whitaker-solutions
 [url "git@github.com:Synthace/"]
 	insteadOf = https://github.com/Synthace/
 [filter "lfs"]
@@ -47,3 +41,11 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[log]
+	excludeDecoration = refs/tags/phabricator/*
+	excludeDecoration = refs/tags/anthahub/*
+	excludeDecoration = refs/tags/device-drivers/*
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
