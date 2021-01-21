@@ -43,8 +43,8 @@
 	clean = git-lfs clean -- %f
 [log]
 	excludeDecoration = refs/tags/phabricator/*
-	excludeDecoration = refs/tags/anthahub/*
-	excludeDecoration = refs/tags/device-drivers/*
+	# excludeDecoration = refs/tags/anthahub/*
+	# excludeDecoration = refs/tags/device-drivers/*
 [pull]
 	rebase = true
 [init]
