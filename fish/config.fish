@@ -15,29 +15,15 @@ end
 
 set -gx EDITOR (type -p emacs)
 set -gx DOTFILES $HOME/src/misc/dotfiles
-set -gx GOPATH $HOME/src/go
 
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
-
-# See `go help module-private`
-set -gx GOPRIVATE "github.com/Synthace"
 
 set local_config ~/.config/fish/config.local.fish
 if test -f $local_config
     . $local_config
 end
 
-
-__sw_add_to_path "$GOPATH/bin"
-__sw_add_to_path "$HOME/.cargo/bin"
-__sw_add_to_path "$HOME/src/3p/arcanist/bin"
 __sw_add_to_path "/usr/local/sbin"
 __sw_add_to_path "$DOTFILES/bin"
-__sw_add_to_path "/usr/local/opt/ruby/bin"
 __sw_add_to_path "/usr/local/lib/ruby/gems/2.6.0/bin/"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/Library/Developer/google-cloud-sdk/path.fish.inc" ]
-    . "$HOME/Library/Developer/google-cloud-sdk/path.fish.inc"
-end
