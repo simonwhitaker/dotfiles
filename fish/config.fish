@@ -1,5 +1,3 @@
-eval (/usr/bin/python3 -m virtualfish ^ /dev/null)
-
 # cd to project directory on activating a virtualenv
 function switch_to_virtualenv_directory --on-event virtualenv_did_activate
     if test -f "$VIRTUAL_ENV/.project"
