@@ -19,7 +19,7 @@ set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 
 set local_config ~/.config/fish/config.local.fish
 if test -f $local_config
-    . $local_config
+    source $local_config
 end
 
 __sw_add_to_path "/usr/local/sbin"
