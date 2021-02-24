@@ -23,5 +23,6 @@ if test -f $local_config
 end
 
 __sw_add_to_path "/usr/local/sbin"
+__sw_add_to_path "$HOME/.cargo/bin"
 __sw_add_to_path "$DOTFILES/bin"
 __sw_add_to_path "/usr/local/lib/ruby/gems/2.6.0/bin/"
