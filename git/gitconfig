@@ -1,39 +1,21 @@
 [user]
     name = Simon Whitaker
     email = sw@netcetera.org
-[difftool]
-    prompt = false
-[diff]
-    tool = Kaleidoscope
 [color]
     diff = auto
     status = auto
     branch = auto
     ui = true
-[mergetool]
-    keepBackup = true
-    prompt = false
 [core]
     quotepath = false
     excludesfile = /Users/simon/.gitignore
 	autocrlf = input
 [github]
     user = simonwhitaker
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
-[merge]
-    tool = Kaleidoscope
 [push]
     default = simple
 [fetch]
 	prune = true
-[includeIf "gitdir:~/src/clients/"]
-    path = ~/.gitconfig.whitaker-solutions
-[includeIf "gitdir:~/src/whitakersolutions/"]
-    path = ~/.gitconfig.whitaker-solutions
 [url "git@github.com:Synthace/"]
 	insteadOf = https://github.com/Synthace/
 [filter "lfs"]
@@ -49,3 +31,11 @@
 	rebase = true
 [init]
 	defaultBranch = master
+
+[include]
+	# Allow local overrides not included in my dotfiles repo
+	path = ~/.gitconfig.local
+[includeIf "gitdir:~/src/clients/"]
+    path = ~/.gitconfig.whitaker-solutions
+[includeIf "gitdir:~/src/whitakersolutions/"]
+    path = ~/.gitconfig.whitaker-solutions
