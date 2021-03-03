@@ -1,36 +1,31 @@
 #!/bin/bash
 
 # Get absolute path to dotfiles dir (see http://stackoverflow.com/q/242538/263871; readlink -f doesn't work on OSX)
-pushd $(dirname "$0") > /dev/null
+pushd "$(dirname "$0")" || exit 1 > /dev/null
 DOTFILES_DIR=$(pwd -L)
-popd > /dev/null
+popd || exit 1 > /dev/null
 
 
 link() {
   ln_source="$DOTFILES_DIR/$1"
   ln_target="$HOME/$2"
-  if [ -L $ln_target ]
+  if [ -L "$ln_target" ]
   then
-    echo [Skipping] $ln_source -\> $ln_target, target symlink already exists
+    echo "[Skipping] $ln_source -> $ln_target, target symlink already exists"
   else
-    echo [Installing] $ln_source -\> $ln_target
-    ln -sf $ln_source $ln_target
+    echo "[Installing] $ln_source -> $ln_target"
+    ln -sf "$ln_source" "$ln_target"
   fi
 }
 
 # Emacs
-mkdir -p $HOME/.emacs.d
+mkdir -p "$HOME"/.emacs.d
 link emacs/init.el .emacs.d/init.el
 
 # Fish
-mkdir -p $HOME/.config/fish
+mkdir -p "$HOME"/.config/fish
 link fish/config.fish .config/fish/config.fish
 link fish/functions .config/fish/functions
-
-mkdir -p $HOME/.config/fish/completions
-for F in $(ls fish/completions); do
-    link fish/completions/$F .config/fish/completions/$(basename $F)
-done
 
 # Git
 link git/gitconfig .gitconfig
@@ -50,8 +45,8 @@ link octave/octaverc .octaverc
 link tmux/tmux.conf .tmux.conf
 
 # Vim
-mkdir -p $HOME/.vim/backup
-mkdir -p $HOME/.vim/temp
+mkdir -p "$HOME"/.vim/backup
+mkdir -p "$HOME"/.vim/temp
 link vim/vimrc .vimrc
 
 # Zsh
