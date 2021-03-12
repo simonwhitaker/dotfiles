@@ -77,7 +77,7 @@ function fish_prompt --description 'Write out the prompt'
     # Hostname if connected over SSH
     if set -q SSH_TTY; or set -q SSH_CLIENT
         set_color $fish_color_host
-        printf '%s ' (hostname)
+        printf '%s ' (hostname -s)
         set_color normal
     end
 
