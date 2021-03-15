@@ -93,7 +93,7 @@ function fish_prompt --description 'Write out the prompt'
 
     # PWD
     set_color $color_cwd
-    echo -n (basename (pwd))
+    echo -n (basename (prompt_pwd))
     set_color normal
 
     printf '%s ' (fish_vcs_prompt)
