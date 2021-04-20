@@ -1,41 +1,35 @@
 [user]
-    name = Simon Whitaker
-    email = sw@netcetera.org
+  name = Simon Whitaker
+  email = sw@netcetera.org
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [core]
-    quotepath = false
-    excludesfile = /Users/simon/.gitignore
-	autocrlf = input
+  quotepath = false
+  excludesfile = /Users/simon/.gitignore
+  autocrlf = input
 [github]
-    user = simonwhitaker
+  user = simonwhitaker
 [push]
-    default = simple
+  default = simple
 [fetch]
-	prune = true
-[url "git@github.com:Synthace/"]
-	insteadOf = https://github.com/Synthace/
+  prune = true
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-[log]
-	excludeDecoration = refs/tags/phabricator/*
-	# excludeDecoration = refs/tags/anthahub/*
-	# excludeDecoration = refs/tags/device-drivers/*
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [pull]
-	rebase = true
+  rebase = true
 [init]
-	defaultBranch = master
+  defaultBranch = master
 
 [include]
-	# Allow local overrides not included in my dotfiles repo
-	path = ~/.gitconfig.local
+  # Allow local overrides not included in my dotfiles repo
+  path = ~/.gitconfig.local
 [includeIf "gitdir:~/src/clients/"]
-    path = ~/.gitconfig.whitaker-solutions
+  path = ~/.gitconfig.whitaker-solutions
 [includeIf "gitdir:~/src/whitakersolutions/"]
-    path = ~/.gitconfig.whitaker-solutions
+  path = ~/.gitconfig.whitaker-solutions
