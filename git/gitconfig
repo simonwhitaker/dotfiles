@@ -10,6 +10,10 @@
   quotepath = false
   excludesfile = /Users/simon/.gitignore
   autocrlf = input
+  pager = delta
+[delta]
+  navigate = true
+  line-numbers = true
 [github]
   user = simonwhitaker
 [push]
