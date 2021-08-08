@@ -19,6 +19,7 @@ set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$DOTFILES/bin"
 fish_add_path /usr/local/sbin
+fish_add_path "$HOME/Library/Python/3.8/bin"
 
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
 fish_add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
