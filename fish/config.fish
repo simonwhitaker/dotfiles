@@ -10,7 +10,7 @@ function switch_to_virtualenv_directory --on-event virtualenv_did_activate
     end
 end
 
-set -gx EDITOR (type -p emacs)
+set -gx EDITOR (type -p mg)
 set -gx DOTFILES $HOME/src/misc/dotfiles
 
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
@@ -18,12 +18,3 @@ set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$DOTFILES/bin"
-fish_add_path /usr/local/sbin
-fish_add_path "$HOME/Library/Python/3.8/bin"
-
-set -gx ANDROID_HOME $HOME/Library/Android/sdk
-fish_add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
-fish_add_path "$ANDROID_HOME/emulator"
-fish_add_path "$ANDROID_HOME/tools"
-fish_add_path "$ANDROID_HOME/tools/bin"
-fish_add_path "$ANDROID_HOME/platform-tools"
