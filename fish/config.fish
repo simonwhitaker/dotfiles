@@ -10,7 +10,7 @@ function switch_to_virtualenv_directory --on-event virtualenv_did_activate
     end
 end
 
-set -gx EDITOR (type -p mg)
+set -gx EDITOR (type -p emacs)
 set -gx DOTFILES $HOME/src/misc/dotfiles
 
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
