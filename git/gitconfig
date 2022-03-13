@@ -37,3 +37,7 @@
   path = ~/.gitconfig.whitaker-solutions
 [includeIf "gitdir:~/src/whitakersolutions/"]
   path = ~/.gitconfig.whitaker-solutions
+[format]
+  # Make this the default format for `git log`. To get the original formatting,
+  # use `git log --pretty=medium`
+	pretty = %C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%an, %cr)%Creset
