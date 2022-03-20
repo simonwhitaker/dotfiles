@@ -28,7 +28,7 @@
 [pull]
   rebase = true
 [init]
-  defaultBranch = master
+	defaultBranch = main
 
 [include]
   # Allow local overrides not included in my dotfiles repo
