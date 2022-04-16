@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Rename local branch
+git branch --move master main
+
+# Fetch latest from origin
+git fetch origin
+
+# Set origin/main as the upstream branch for main
+git branch --set-upstream-to=origin/main main
+
+# Update the default HEAD for the origin remote
+#
+# With -a or --auto, the remote is queried to determine its HEAD, then the
+# symbolic-ref refs/remotes/<name>/HEAD is set to the same branch. e.g., if
+# the remote HEAD is pointed at next, git remote set-head origin -a will set
+# the symbolic-ref refs/remotes/origin/HEAD to refs/remotes/origin/next. This
+# will only work if refs/remotes/origin/next already exists; if not it must
+# be fetched first.
+git remote set-head origin --auto
