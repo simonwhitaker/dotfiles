@@ -100,6 +100,17 @@ function fish_prompt --description 'Write out the prompt'
         printf ") "
     end
 
+    if set -q sw_show_k8s_in_prompt
+        set_color normal
+        printf "("
+        set_color 6699FF
+        printf (kubectl config current-context)
+        printf "|"
+        printf (kubectl config view --minify | rg -o --pcre2 '(?<=namespace: ).+')
+        set_color normal
+        printf ") "
+    end
+
     # PWD
     set_color $color_cwd
     echo -n (basename (prompt_pwd))
