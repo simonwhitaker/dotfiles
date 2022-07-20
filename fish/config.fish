@@ -18,3 +18,4 @@ set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$DOTFILES/bin"
+fish_add_path "$HOME/.local/bin" # Used by poetry
