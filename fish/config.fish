@@ -19,3 +19,6 @@ set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$DOTFILES/bin"
 fish_add_path "$HOME/.local/bin" # Used by poetry
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc' ]; . '/Users/simon/Library/Developer/google-cloud-sdk/path.fish.inc'; end
