@@ -17,6 +17,7 @@ set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 
 fish_add_path "$HOME/.cargo/bin"
+fish_add_path "$HOME/.local/bin"
 fish_add_path "$DOTFILES/bin"
 fish_add_path "/usr/local/sbin"
 fish_add_path "$HOME/.local/bin" # Used by poetry
