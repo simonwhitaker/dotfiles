@@ -1,3 +1,0 @@
-PS1('\[\033[33m\]\W\[\033[0m\]:\# >> ')
-
-addpath("~/src/misc/octave/functions")
