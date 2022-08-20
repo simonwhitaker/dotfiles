@@ -10,9 +10,14 @@ function switch_to_virtualenv_directory --on-event virtualenv_did_activate
     end
 end
 
-if type -q emacs
-    set -gx EDITOR (type -p emacs)
+set __preferred_editors emacs mg vim
+for editor in $__preferred_editors
+    if type -q $editor
+        set -gx EDITOR (type -p $editor)
+        break
+    end
 end
+
 set -gx DOTFILES $HOME/src/misc/dotfiles
 
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
