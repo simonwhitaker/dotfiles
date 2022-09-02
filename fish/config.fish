@@ -38,3 +38,7 @@ if type -q pyenv
     fish_add_path $PYENV_ROOT/bin
     pyenv init - | source
 end
+
+if type -q op
+    op completion fish | source
+end
