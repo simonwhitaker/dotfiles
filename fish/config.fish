@@ -18,7 +18,7 @@ for editor in $__preferred_editors
     end
 end
 
-set -gx DOTFILES $HOME/src/misc/dotfiles
+set -g DOTFILES $HOME/src/misc/dotfiles
 
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
