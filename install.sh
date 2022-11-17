@@ -29,20 +29,7 @@ link fish/functions .config/fish/functions
 
 # Git
 link git/gitconfig .gitconfig
-link git/gitconfig.whitaker-solutions .gitconfig.whitaker-solutions
 link git/gitignore .gitignore
-
-# Hg
-link hg/hgrc .hgrc
-
-# LLDB
-link lldb/lldbinit .lldbinit
-
-# Octave
-link octave/octaverc .octaverc
-
-# Tmux
-link tmux/tmux.conf .tmux.conf
 
 # Vim
 mkdir -p "$HOME"/.vim/backup
