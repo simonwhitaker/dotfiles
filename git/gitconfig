@@ -35,6 +35,9 @@
 	# Allow local overrides not included in my dotfiles repo
 	path = ~/.gitconfig.local
 
+[includeIf "gitdir:~/src/orgs/cord/"]
+	path = ~/.gitconfig.cord
+
 [format]
 	# Make this the default format for `git log`. To get the original formatting,
 	# use `git log --pretty=medium`

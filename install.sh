@@ -29,6 +29,7 @@ link fish/functions .config/fish/functions
 
 # Git
 link git/gitconfig .gitconfig
+link git/gitconfig.cord .gitconfig.cord
 link git/gitignore .gitignore
 
 # Vim
