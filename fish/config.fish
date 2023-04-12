@@ -49,6 +49,9 @@ if test -d /opt/homebrew
     eval "$(/opt/homebrew/bin/brew shellenv)"
 end
 
+# https://github.com/sharkdp/bat#customization
+export BAT_THEME="Monokai Extended Bright"
+
 abbr -a bo 'brew outdated'
 abbr -a bu 'brew update'
 abbr -a buo 'brew update && brew outdated'
