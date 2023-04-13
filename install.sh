@@ -25,7 +25,7 @@ link emacs/init.el .emacs.d/init.el
 # Fish
 mkdir -p "$HOME"/.config/fish
 link fish/config.fish .config/fish/config.fish
-link fish/functions .config/fish/functions
+link fish/functions/ .config/fish/functions
 
 # Git
 link git/gitconfig .gitconfig
