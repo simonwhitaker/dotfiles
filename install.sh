@@ -29,7 +29,6 @@ link fish/functions/ .config/fish/functions
 
 # Git
 link git/gitconfig .gitconfig
-link git/gitignore .gitignore
 
 # Vim
 mkdir -p "$HOME"/.vim/backup

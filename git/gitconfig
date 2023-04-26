@@ -8,7 +8,6 @@
 	ui = true
 [core]
 	quotepath = false
-	excludesfile = /Users/simon/.gitignore
 	autocrlf = input
 	pager = delta
 [delta]
