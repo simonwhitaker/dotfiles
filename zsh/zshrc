@@ -72,7 +72,7 @@ then
 fi
 
 # Local ZSH config
-PRIVATE_CONFIG=$HOME/.localrc
+PRIVATE_CONFIG=$HOME/.zshrc.local
 if [[ -a $PRIVATE_CONFIG ]]
 then
     source $PRIVATE_CONFIG
