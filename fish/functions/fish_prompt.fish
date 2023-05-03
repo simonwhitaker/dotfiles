@@ -100,6 +100,20 @@ function fish_prompt --description 'Write out the prompt'
         printf ") "
     end
 
+    if set -q S2A_AWS_ROLE
+        set_color normal
+        printf "("
+        switch $S2A_AWS_ROLE
+        case '*prod'
+            set_color FF3300
+        case '*'
+            set_color FF9900
+        end
+        printf $S2A_AWS_ROLE
+        set_color normal
+        printf ") "
+    end
+
     if set -q sw_show_k8s_in_prompt
         set_color normal
         printf "("
