@@ -89,5 +89,6 @@ abbr -a grmm 'git rebase master'
 abbr -a grr 'git restore --staged'
 abbr -a gsl 'git sl'
 abbr -a gst 'git status'
+abbr -a k kubectl
 abbr -a lg lazygit
 abbr -a top 'top -o cpu'
