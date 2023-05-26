@@ -49,6 +49,9 @@ if type -q op
     op completion fish | source
 end
 
+if type -q ngrok
+    ngrok completion | source
+end
 
 # https://github.com/sharkdp/bat#customization
 export BAT_THEME="Monokai Extended Bright"
