@@ -56,7 +56,11 @@ end
 # https://github.com/sharkdp/bat#customization
 export BAT_THEME="Monokai Extended Bright"
 
+abbr -a bi 'brew install'
+abbr -a bic 'brew install --cask'
 abbr -a bo 'brew outdated'
+abbr -a bs 'brew search'
+abbr -a bsc 'brew search --cask'
 abbr -a bu 'brew update'
 abbr -a buo 'brew update && brew outdated'
 abbr -a bup 'brew upgrade'
