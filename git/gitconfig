@@ -38,3 +38,17 @@
 	# Make this the default format for `git log`. To get the original formatting,
 	# use `git log --pretty=medium`
 	pretty = %C(yellow)%h%Creset%C(cyan)%d%Creset %s %C(green)(%an, %cr)%Creset
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+	trustExitCode = true
+[merge]
+	tool = Kaleidoscope
+[mergetool]
+	prompt = false
