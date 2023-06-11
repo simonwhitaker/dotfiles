@@ -14,8 +14,12 @@ link() {
     echo "[Skipping] $ln_source -> $ln_target, target symlink already exists"
   else
     echo "[Installing] $ln_source -> $ln_target"
+    if [ -e "$ln_target" ]
+    then
+      mv -f "$ln_target" "$ln_target.orig"
+    fi
     mkdir -p "$(dirname "$ln_target")"
-    ln -sf "$ln_source" "$ln_target"
+    ln -s "$ln_source" "$ln_target"
   fi
 }
 
@@ -24,7 +28,7 @@ link emacs/init.el "$HOME"/.emacs.d/init.el
 
 # Fish
 link fish/config.fish "$HOME"/.config/fish/config.fish
-link fish/functions/ "$HOME"/.config/fish/functions
+link fish/functions "$HOME"/.config/fish/functions
 
 # Git
 link git/gitconfig "$HOME"/.gitconfig
