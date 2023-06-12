@@ -28,7 +28,11 @@ link emacs/init.el "$HOME"/.emacs.d/init.el
 
 # Fish
 link fish/config.fish "$HOME"/.config/fish/config.fish
-link fish/functions "$HOME"/.config/fish/functions
+
+for f in fish/functions/*.fish
+do
+  link "$f" "$HOME"/.config/fish/functions/"$(basename "$f")"
+done
 
 # Git
 link git/gitconfig "$HOME"/.gitconfig
