@@ -11,9 +11,9 @@ link() {
   ln_target="$2"
   if [ -L "$ln_target" ]
   then
-    echo "[Skipping] $ln_source -> $ln_target, target symlink already exists"
+    echo "🆗 $ln_source -> $ln_target, target symlink already exists"
   else
-    echo "[Installing] $ln_source -> $ln_target"
+    echo "✅ $ln_source -> $ln_target"
     if [ -e "$ln_target" ]
     then
       mv -f "$ln_target" "$ln_target.orig"
