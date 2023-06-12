@@ -7,13 +7,14 @@ popd > /dev/null || exit 1
 
 
 link() {
+  ln_source_relative=$1
   ln_source="$DOTFILES_DIR/$1"
   ln_target="$2"
   if [ -L "$ln_target" ]
   then
-    echo "🆗 $ln_source -> $ln_target, target symlink already exists"
+    echo "🆗 $ln_source_relative -> $ln_target, target symlink already exists"
   else
-    echo "✅ $ln_source -> $ln_target"
+    echo "✅ $ln_source_relative -> $ln_target"
     if [ -e "$ln_target" ]
     then
       mv -f "$ln_target" "$ln_target.orig"
