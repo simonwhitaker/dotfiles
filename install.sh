@@ -46,7 +46,7 @@ link git/gitconfig "$HOME"/.gitconfig
 #   not set or empty, $HOME/.config/git/ignore is used instead.
 git_config_dir=${XDG_CONFIG_HOME:-"$HOME"/.config}
 link git/gitignore "$git_config_dir"/git/ignore
-link lazygit/config.yml "$HOME"/.config/lazygit/config.yml
+link lazygit/config.yml "$HOME/Library/Application Support/lazygit/config.yml"
 
 # Vim
 mkdir -p "$HOME"/.vim/backup
