@@ -61,6 +61,11 @@ if type -q devpod
     devpod completion fish | source
 end
 
+if type -q gibo-go
+    gibo-go completion fish | source
+end
+
+
 # https://github.com/sharkdp/bat#customization
 export BAT_THEME="Monokai Extended Bright"
 
