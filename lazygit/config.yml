@@ -1,2 +1,4 @@
 git:
   autoFetch: false
+gui:
+  nerdFontsVersion: 3
