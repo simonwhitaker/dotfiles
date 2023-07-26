@@ -39,6 +39,33 @@ if test -d /opt/homebrew
     eval "$(/opt/homebrew/bin/brew shellenv)"
 end
 
+if type -q pyenv
+    set -gx PYENV_ROOT $HOME/.pyenv
+    fish_add_path $PYENV_ROOT/bin
+    pyenv init - | source
+
+    if type -q pyenv-virtualenv
+          pyenv virtualenv-init - | source
+    end
+end
+
+if type -q op
+    op completion fish | source
+end
+
+if type -q ngrok
+    ngrok completion | source
+end
+
+if type -q devpod
+    devpod completion fish | source
+end
+
+if type -q gibo-go
+    gibo-go completion fish | source
+end
+
+
 # https://github.com/sharkdp/bat#customization
 export BAT_THEME="Monokai Extended Bright"
 
