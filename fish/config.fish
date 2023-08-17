@@ -83,4 +83,7 @@ abbr -a gsl 'git sl'
 abbr -a gst 'git status'
 abbr -a k kubectl
 abbr -a lg lazygit
+abbr -a pt 'python -m pytest'
+abbr -a ptr 'python -m pytest --runintegration'
 abbr -a top 'top -o cpu'
+abbr -a za 'zellij attach'
