@@ -52,3 +52,5 @@
 	tool = Kaleidoscope
 [mergetool]
 	prompt = false
+[rerere]
+	enabled = true
