@@ -45,7 +45,6 @@ abbr -a bo 'brew outdated'
 abbr -a bs 'brew search'
 abbr -a bsc 'brew search --cask'
 abbr -a bu 'brew update'
-abbr -a buo 'brew update && brew outdated'
 abbr -a bup 'brew upgrade'
 abbr -a c code
 abbr -a c. 'code .'
