@@ -38,7 +38,7 @@ if type -q pyenv
 end
 
 # https://github.com/sharkdp/bat#customization
-export BAT_THEME="Monokai Extended Bright"
+set -gx BAT_THEME "Monokai Extended Bright"
 
 abbr -a bi 'brew install'
 abbr -a bic 'brew install --cask'
