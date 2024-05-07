@@ -25,6 +25,7 @@ fish_add_path "$dotfiles/bin"
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/go/bin"
 fish_add_path "$HOME/.local/bin" # Used by poetry
+fish_add_path "/opt/homebrew/bin"
 
 if type -q pyenv
     set -gx PYENV_ROOT $HOME/.pyenv
