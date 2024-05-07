@@ -35,6 +35,11 @@ do
   link "$f" "$HOME"/.config/fish/functions/"$(basename "$f")"
 done
 
+for f in fish/conf.d/*.fish
+do
+  link "$f" "$HOME"/.config/fish/conf.d/"$(basename "$f")"
+done
+
 # Git
 link git/gitconfig "$HOME"/.gitconfig
 # From https://git-scm.com/docs/gitignore:
