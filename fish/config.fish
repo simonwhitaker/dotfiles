@@ -40,6 +40,9 @@ end
 # https://github.com/sharkdp/bat#customization
 set -gx BAT_THEME "Monokai Extended Bright"
 
+# Stop https://www.nltk.org/ from creating a directory in $HOME.
+set -gx NLTK_DATA "$HOME/Library/Caches/nltk_data"
+
 abbr -a bi 'brew install'
 abbr -a bic 'brew install --cask'
 abbr -a bo 'brew outdated'
