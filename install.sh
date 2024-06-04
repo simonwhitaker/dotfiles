@@ -42,6 +42,7 @@ done
 
 # Git
 link git/gitconfig "$HOME"/.gitconfig
+link git/gitconfig.phoebe "$HOME"/.gitconfig.phoebe
 # From https://git-scm.com/docs/gitignore:
 #
 #   Patterns which a user wants Git to ignore in all situations (e.g., backup or
