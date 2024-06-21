@@ -53,6 +53,7 @@ abbr -a buo 'brew update && brew outdated'
 abbr -a bup 'brew upgrade'
 abbr -a c code
 abbr -a c. 'code .'
+abbr -a cdr 'cd (git rev-parse --show-toplevel)'
 abbr -a cr 'code (git rev-parse --show-toplevel)'
 abbr -a demo 'if set -q SW_SIMPLE_PROMPT; set -e SW_SIMPLE_PROMPT; else; set SW_SIMPLE_PROMPT 1; end'
 abbr -a gb 'git branch'
