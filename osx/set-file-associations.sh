@@ -13,13 +13,16 @@ duti -s com.microsoft.VSCode .gitattributes all
 duti -s com.microsoft.VSCode .gitignore all
 duti -s com.microsoft.VSCode .htaccess all
 duti -s com.microsoft.VSCode .js all
+duti -s com.microsoft.VSCode .js all
 duti -s com.microsoft.VSCode .json all
 duti -s com.microsoft.VSCode .link all
 duti -s com.microsoft.VSCode .md all
 duti -s com.microsoft.VSCode .mv all
 duti -s com.microsoft.VSCode .mvt all
+duti -s com.microsoft.VSCode .py all
 duti -s com.microsoft.VSCode .scss all
 duti -s com.microsoft.VSCode .sh all
+duti -s com.microsoft.VSCode .ts all
 duti -s com.microsoft.VSCode .txt all
 duti -s com.microsoft.VSCode .xml all
 duti -s com.microsoft.VSCode .yaml all
