@@ -4,4 +4,14 @@ git:
     pager: delta --dark --paging=never
 gui:
   nerdFontsVersion: "3"
+  spinner:
+    frames:
+      - "⣷"
+      - "⣯"
+      - "⣟"
+      - "⡿"
+      - "⢿"
+      - "⣻"
+      - "⣽"
+      - "⣾"
 notARepository: skip
