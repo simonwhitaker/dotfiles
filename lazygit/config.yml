@@ -1,5 +1,7 @@
 git:
   autoFetch: false
+  paging:
+    pager: delta --dark --paging=never
 gui:
-  nerdFontsVersion: 3
+  nerdFontsVersion: "3"
 notARepository: skip
