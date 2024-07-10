@@ -77,18 +77,4 @@ if [[ -a $PRIVATE_CONFIG ]]
 then
     source $PRIVATE_CONFIG
 fi
-
-
-function titaness_shell() {
-    cluster="prod-cluster"
-    service="titaness-worker"
-    profile="production"
-
-    echo "Connecting to $cluster/$service ($profile)"
-
-    cluster_arn=$(aws ecs list-clusters --profile "$profile" --query "clusterArns[?contains(@, '$cluster')] | [0]" --output text)
-    service_arn=$(aws ecs list-services --profile "$profile" --cluster "$cluster_arn" --query "serviceArns[?contains(@, '$service')] | [0]" --output text)
-    task_arn=$(aws ecs list-tasks --profile "$profile" --service-name "$service_arn" --cluster "$cluster_arn" --query 'taskArns[0]' --output text)
-    aws ecs execute-command --profile "$profile" --cluster "$cluster" --task "$task_arn" --command "/bin/bash" --interactive
-}
-alias titaness-shell=titaness_shell
+export PATH=/Users/simon/src/phoebe/monorepo/bin:$PATH
