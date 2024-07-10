@@ -89,5 +89,6 @@ abbr -a gsl 'git sl'
 abbr -a gst 'git status'
 abbr -a k kubectl
 abbr -a lg lazygit
+abbr -a tf terraform
 abbr -a top 'top -o cpu'
 abbr -a za 'zellij attach'
