@@ -57,3 +57,6 @@
 	prompt = false
 [rerere]
 	enabled = true
+[diff "lockb"]
+	textconv = bun
+	binary = true
