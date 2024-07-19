@@ -9,7 +9,7 @@
 [core]
 	quotepath = false
 	autocrlf = input
-	pager = delta
+	pager = delta --tabs=4
 [delta]
 	navigate = true
 	line-numbers = true
