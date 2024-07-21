@@ -87,8 +87,10 @@ abbr -a grmm 'git rebase master'
 abbr -a grr 'git restore --staged'
 abbr -a gsl 'git sl'
 abbr -a gst 'git status'
+abbr -a gts 'git town switch'
 abbr -a k kubectl
 abbr -a lg lazygit
+abbr -a r runny
 abbr -a tf terraform
 abbr -a top 'top -o cpu'
 abbr -a za 'zellij attach'
