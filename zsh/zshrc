@@ -21,6 +21,18 @@
 autoload -U colors && colors
 
 #------------------------------------------------------------
+# Enable brew-installed shell completions
+#------------------------------------------------------------
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+#------------------------------------------------------------
 # Load plugins
 #------------------------------------------------------------
 
