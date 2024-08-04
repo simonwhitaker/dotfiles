@@ -65,3 +65,6 @@ link zsh/zsh-completions "$HOME"/.zsh-completions
 link zsh/zsh-plugins "$HOME"/.zsh-plugins
 link zsh/zshenv "$HOME"/.zshenv
 link zsh/zshrc "$HOME"/.zshrc
+
+# Bash
+link bash/bash_profile "$HOME"/.bash_profile
