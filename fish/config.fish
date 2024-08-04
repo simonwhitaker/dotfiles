@@ -85,9 +85,8 @@ abbr -a grimm 'git rebase -i master'
 abbr -a grm 'git rebase main'
 abbr -a grmm 'git rebase master'
 abbr -a grr 'git restore --staged'
-abbr -a gsl 'git sl'
 abbr -a gst 'git status'
-abbr -a gts 'git town switch'
+abbr -a gs 'git town switch'
 abbr -a k kubectl
 abbr -a lg lazygit
 abbr -a r runny
