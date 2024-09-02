@@ -52,6 +52,7 @@ link git/gitconfig.phoebe "$HOME"/.gitconfig.phoebe
 #   not set or empty, $HOME/.config/git/ignore is used instead.
 git_config_dir=${XDG_CONFIG_HOME:-"$HOME"/.config}
 link git/gitignore "$git_config_dir"/git/ignore
+link git/gitattributes "$git_config_dir"/git/attributes
 link lazygit/config.yml "$HOME/Library/Application Support/lazygit/config.yml"
 
 # Vim
