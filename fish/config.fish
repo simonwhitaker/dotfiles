@@ -96,3 +96,7 @@ abbr -a r runny
 abbr -a tf terraform
 abbr -a top 'top -o cpu'
 abbr -a za 'zellij attach'
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.fish 2>/dev/null || :
