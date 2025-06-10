@@ -53,7 +53,12 @@ link git/gitconfig.phoebe "$HOME"/.gitconfig.phoebe
 git_config_dir=${XDG_CONFIG_HOME:-"$HOME"/.config}
 link git/gitignore "$git_config_dir"/git/ignore
 link git/gitattributes "$git_config_dir"/git/attributes
+
+# Lazygit
 link lazygit/config.yml "$HOME/Library/Application Support/lazygit/config.yml"
+
+# Ghostty
+link ghostty/config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 
 # Vim
 mkdir -p "$HOME"/.vim/backup
