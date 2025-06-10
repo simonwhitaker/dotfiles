@@ -46,3 +46,5 @@ theme = catppuccin-mocha
 window-padding-x = 4
 window-padding-y = 5
 macos-option-as-alt = left
+window-width = 140
+window-height = 40
