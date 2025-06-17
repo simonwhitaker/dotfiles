@@ -42,7 +42,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = catppuccin-mocha
+theme = citruszest
 window-padding-x = 4
 window-padding-y = 5
 macos-option-as-alt = left
