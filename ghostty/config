@@ -49,3 +49,7 @@ macos-option-as-alt = left
 window-width = 140
 window-height = 40
 keybind = shift+enter=text:\n
+
+# Use a block cursor, and don't allow shell integration to change it back to a bar.
+shell-integration-features = no-cursor
+cursor-style = block
