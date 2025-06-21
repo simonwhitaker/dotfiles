@@ -14,4 +14,7 @@ gui:
       - "⣻"
       - "⣽"
       - "⣾"
+  theme:
+    selectedLineBgColor:
+      - black
 notARepository: skip
