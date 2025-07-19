@@ -3,12 +3,16 @@
 # To add config for the local machine only, add a file to ~/.config/fish/conf.d,
 # e.g. ~/.config/fish/conf.d/local.fish
 
-# cd to project directory on activating a virtualenv
-function __switch_to_virtualenv_directory --on-event virtualenv_did_activate
-    if test -f "$VIRTUAL_ENV/.project"
-        cd (cat "$VIRTUAL_ENV/.project")
+# Activate virtual envs when changing directory
+function __activate_virtualenv --on-variable PWD
+    if test -d ".venv"
+        source .venv/bin/activate.fish
+    else if functions -q deactivate
+        deactivate
     end
 end
+# Disable the prompt that activate.fish generates; I have my own implementation in fish_prompt.fish.
+set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
 set __preferred_editors emacs mg vim
 for editor in $__preferred_editors
@@ -26,16 +30,6 @@ fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/go/bin"
 fish_add_path "$HOME/.local/bin" # Used by poetry
 fish_add_path "/opt/homebrew/bin"
-
-if type -q pyenv
-    set -gx PYENV_ROOT $HOME/.pyenv
-    fish_add_path $PYENV_ROOT/bin
-    pyenv init - | source
-
-    if type -q pyenv-virtualenv
-          pyenv virtualenv-init - | source
-    end
-end
 
 # https://github.com/sharkdp/bat#customization
 set -gx BAT_THEME "Monokai Extended Bright"
