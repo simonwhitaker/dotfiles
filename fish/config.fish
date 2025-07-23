@@ -3,6 +3,10 @@
 # To add config for the local machine only, add a file to ~/.config/fish/conf.d,
 # e.g. ~/.config/fish/conf.d/local.fish
 
+# Disable the prompt that activate.fish generates; I have my own implementation in fish_prompt.fish.
+set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+
+
 # Activate virtual envs when changing directory
 function __activate_virtualenv --on-variable PWD
     if test -d ".venv"
@@ -11,8 +15,8 @@ function __activate_virtualenv --on-variable PWD
         deactivate
     end
 end
-# Disable the prompt that activate.fish generates; I have my own implementation in fish_prompt.fish.
-set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+# Call once on shell startup, to handle the case where the shell starts in a directory with a .venv
+__activate_virtualenv
 
 set __preferred_editors emacs mg vim
 for editor in $__preferred_editors
