@@ -8,15 +8,15 @@ set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
 
 # Activate virtual envs when changing directory
-function __activate_virtualenv --on-variable PWD
-    if test -d ".venv"
-        source .venv/bin/activate.fish
-    else if functions -q deactivate
-        deactivate
-    end
-end
-# Call once on shell startup, to handle the case where the shell starts in a directory with a .venv
-__activate_virtualenv
+# function __activate_virtualenv --on-variable PWD
+#     if test -d ".venv"
+#         source .venv/bin/activate.fish
+#     else if functions -q deactivate
+#         deactivate
+#     end
+# end
+# # Call once on shell startup, to handle the case where the shell starts in a directory with a .venv
+# __activate_virtualenv
 
 set __preferred_editors emacs mg vim
 for editor in $__preferred_editors
