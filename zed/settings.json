@@ -7,19 +7,49 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "agent": {
     "always_allow_tool_actions": true,
     "model_parameters": [],
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-opus-4-latest"
+      "provider": "openai",
+      "model": "gpt-5"
     }
   },
-  "ui_font_size": 14,
+  "base_keymap": "VSCode",
   "buffer_font_size": 13,
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff", "pyright"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "project_panel": {
+    "hide_gitignore": true
+  },
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono"
+  },
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "Zedokai Darker"
-  }
+    "dark": "Zedokai Darker (Filter Spectrum)"
+  },
+  "ui_font_size": 15
 }
