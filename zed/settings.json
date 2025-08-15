@@ -19,7 +19,7 @@
   "base_keymap": "VSCode",
   "buffer_font_size": 13,
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
   "languages": {
     "Python": {
