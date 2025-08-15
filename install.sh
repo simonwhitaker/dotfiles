@@ -74,3 +74,6 @@ link zsh/zshrc "$HOME"/.zshrc
 
 # Bash
 link bash/bash_profile "$HOME"/.bash_profile
+
+# Zed
+link zed/settings.json "$HOME"/.config/zed/settings.json
