@@ -4,7 +4,6 @@
 # VSCode icons in the MacOS dock.
 function code --description "Open the files passed as arguments in Cursor if installed, else in VS Code"
     set editor_bundle_ids \
-        dev.zed.Zed \
         com.todesktop.230313mzl4w4u92 \
         com.microsoft.VSCode
     for editor_bundle_id in $editor_bundle_ids
