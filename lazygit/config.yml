@@ -1,7 +1,7 @@
 git:
   autoFetch: false
-  paging:
-    pager: delta --dark --paging=never --tabs=4
+  pagers:
+    - pager: delta --dark --paging=never --tabs=4
 gui:
   nerdFontsVersion: "3"
   spinner:
