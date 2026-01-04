@@ -35,6 +35,10 @@ fish_add_path "$HOME/go/bin"
 fish_add_path "$HOME/.local/bin" # Used by poetry
 fish_add_path "/opt/homebrew/bin"
 
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+fish_add_path "$BUN_INSTALL/bin"
+
 # https://github.com/sharkdp/bat#customization
 set -gx BAT_THEME "Monokai Extended Bright"
 
