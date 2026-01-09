@@ -16,6 +16,7 @@
       "model": "gpt-5"
     }
   },
+  "auto_update": false,
   "base_keymap": "VSCode",
   "buffer_font_size": 13,
   "features": {
@@ -26,8 +27,12 @@
       "language_servers": ["ruff", "pyright"],
       "format_on_save": "on",
       "formatter": [
-        { "code_action": "source.organizeImports.ruff" },
-        { "code_action": "source.fixAll.ruff" },
+        {
+          "code_action": "source.organizeImports.ruff"
+        },
+        {
+          "code_action": "source.fixAll.ruff"
+        },
         {
           "language_server": {
             "name": "ruff"
@@ -36,9 +41,13 @@
       ]
     }
   },
+  "preferred_line_length": 120,
   "project_panel": {
+    "hide_hidden": false,
     "hide_gitignore": true
   },
+  "show_wrap_guides": true,
+  "soft_wrap": "preferred_line_length",
   "terminal": {
     "font_family": "JetBrainsMono Nerd Font Mono"
   },
