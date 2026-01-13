@@ -7,6 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "guinness.local",
+      "username": "simon",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/simon"
+          ]
+        }
+      ]
+    }
+  ],
+  "buffer_font_family": "Cartograph CF",
+  "sticky_scroll": {
+    "enabled": true
+  },
   "icon_theme": "Colored Zed Icons Theme Dark",
   "agent": {
     "always_allow_tool_actions": true,
