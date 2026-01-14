@@ -12,9 +12,9 @@ link() {
   ln_target="$2"
   if [ -L "$ln_target" ]
   then
-    echo "🆗 $ln_source_relative -> $ln_target, target symlink already exists"
+    echo -e "\033[38;5;240m$ln_source_relative -> $ln_target (exists)\033[0m"
   else
-    echo "✅ $ln_source_relative -> $ln_target"
+    echo -e "\033[1;32m$ln_source_relative -> $ln_target\033[0m"
     if [ -e "$ln_target" ]
     then
       mv -f "$ln_target" "$ln_target.orig"
