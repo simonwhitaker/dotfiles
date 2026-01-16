@@ -103,5 +103,3 @@ abbr -a zr 'zed (git rev-parse --show-toplevel)'
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
-
-alias claude="/Users/simon/.claude/local/claude"
