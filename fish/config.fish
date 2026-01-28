@@ -53,10 +53,10 @@ abbr -a bsc 'brew search --cask'
 abbr -a bu 'brew update'
 abbr -a buo 'brew update && brew outdated'
 abbr -a bup 'brew upgrade'
-abbr -a c code
-abbr -a c. 'code .'
+# abbr -a c code
+# abbr -a c. 'code .'
+# abbr -a cr 'code (git rev-parse --show-toplevel)'
 abbr -a cdr 'cd (git rev-parse --show-toplevel)'
-abbr -a cr 'code (git rev-parse --show-toplevel)'
 abbr -a dcd 'docker compose down'
 abbr -a dcl 'docker compose logs -f'
 abbr -a dcr 'docker compose restart'
